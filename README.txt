@@ -45,5 +45,5 @@ PDF-ПОРТФОЛИО (A4, 6 страниц, EN и RU)
   в hero, About и Contacts подставляют файл по выбранному языку).
   Исходники: doc_src/build_pdf.py (все тексты RU/EN в словаре T внутри файла), картинки doc_src/img, HTML генерируется.
   Пересборка: python doc_src/build_pdf.py (нужен установленный Microsoft Edge, профиль пишется на D:).
-  Переменная SITE_URL вверху build_pdf.py: впишите адрес сайта после публикации, он появится на странице Selected work.
+  SITE_URL в build_pdf.py = https://gonar777-prog.github.io/portfolio-pro/ (стр. Selected work и контакты).
   Кейс "Furniture & Apartment Project": media/*/mebel.*, источник D:\Рабочий стол СКА\Новая папка (4)\проект мебель и квартира 14.10.24\готово прав.mp4

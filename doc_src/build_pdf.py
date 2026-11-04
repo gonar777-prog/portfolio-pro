@@ -5,7 +5,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, '..', 'assets', 'docs')
 os.makedirs(OUT, exist_ok=True)
 EDGE = r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
-SITE_URL = ''   # TODO: вписать адрес сайта после публикации (покажется в PDF)
+SITE_URL = 'https://gonar777-prog.github.io/portfolio-pro/'
 
 M = 'img/'
 T = {
@@ -39,7 +39,7 @@ T = {
  sv_h='Services', sv=['Editing, reels and dynamic videos','Motion graphics and titles','Subtitles and text animation','Colour correction and retouch','AI video and lip-sync','YouTube thumbnails and covers','Remastering and upscaling','News and social-media shorts','Whole-channel production'],
  pr_h='Process', pr=[('Brief','Goal, audience, format, deadline.'),('References & storyboard','A shared picture of the result.'),('Edit & motion','Cut, animation, sound, preview link.'),('Revisions','Clear, consolidated feedback.'),('Delivery','Final files in the formats you need.')],
  c_h='Let’s make something worth watching.', c_s='The fastest way to reach me is Telegram.',
- lbl=dict(tg='Telegram',em='Email',fl='Freelancehunt',yt='YouTube'), fl_t='Freelancehunt profile', cv='View the portfolio site',
+ lbl=dict(tg='Telegram',em='Email',fl='Freelancehunt',yt='YouTube'), fl_t='Freelancehunt profile', web='Portfolio site', cv='View the portfolio site',
  footer='GONAR · Video Editor · Motion Designer'),
 'ru': dict(
  role='Видеомонтажёр · Моушн-дизайнер · Креативный продюсер', years='7+ лет в дизайне',
@@ -71,7 +71,7 @@ T = {
  sv_h='Услуги', sv=['Монтаж, рилсы и динамичные ролики','Моушн-графика и титры','Субтитры и анимация текста','Цветокоррекция и ретушь','AI-видео и липсинк','Превью и обложки YouTube','Ремастеринг и апскейл','Новостные ролики для соцсетей','Продакшн целых каналов'],
  pr_h='Процесс', pr=[('Бриф','Цель, аудитория, формат, срок.'),('Референсы и раскадровка','Общее понимание результата.'),('Монтаж и моушн','Монтаж, анимация, звук, превью по ссылке.'),('Правки','Понятные раунды правок.'),('Сдача','Финальные файлы в нужных форматах.')],
  c_h='Давайте сделаем то, что хочется смотреть.', c_s='Быстрее всего ответ в Telegram.',
- lbl=dict(tg='Telegram',em='Email',fl='Freelancehunt',yt='YouTube'), fl_t='Профиль на Freelancehunt', cv='Сайт-портфолио',
+ lbl=dict(tg='Telegram',em='Email',fl='Freelancehunt',yt='YouTube'), fl_t='Профиль на Freelancehunt', web='Сайт-портфолио', cv='Сайт-портфолио',
  footer='GONAR · Видеомонтажёр · Моушн-дизайнер')}
 
 CSS = """
@@ -192,7 +192,7 @@ def build(lang):
     w = t['works']
     land = ''.join(f'<div><div class="im"><img src="{M}{i}.jpg" alt=""></div><h3>{a}</h3><span class="mono">{b}</span></div>' for i, a, b in w[:4])
     vert = ''.join(f'<div><div class="im"><img src="{M}{i}.jpg" alt=""></div><h3>{a}</h3><span class="mono">{b}</span></div>' for i, a, b in w[4:])
-    url = f'<a style="color:var(--acc)">{SITE_URL}</a>' if SITE_URL else ''
+    url = f'<br><a href="{SITE_URL}" style="color:var(--acc)">{SITE_URL}</a>' if SITE_URL else ''
     p5 = f'''<section class="page dark">{head("", 5, N, t["w_h"])}<h2 class="serif">{t["w_h"]}</h2><p class="lede">{t["w_s"]} {url}</p><div class="wk">{land}</div><div class="wkv">{vert}</div></section>'''
     sv = ''.join(f'<li>{x}</li>' for x in t['sv'])
     pr = ''.join(f'<div><span class="n">0{i+1}</span><h3>{a}</h3><p>{b}</p></div>' for i, (a, b) in enumerate(t['pr']))
@@ -202,7 +202,7 @@ def build(lang):
  <h2 class="serif" style="font-size:28pt;margin-bottom:5mm">{t["pr_h"]}</h2><div class="pr">{pr}</div>
  <div class="contact"><h2 class="serif">{t["c_h"]}</h2><p class="s">{t["c_s"]}</p>
   <div class="big-tg">@aid99999</div>
-  <dl class="ct"><dt>{L["tg"]}</dt><dd><a href="https://t.me/aid99999">t.me/aid99999</a></dd><dt>{L["em"]}</dt><dd><a href="mailto:gonar777@gmail.com">gonar777@gmail.com</a></dd><dt>{L["fl"]}</dt><dd><a href="https://freelancehunt.com/freelancer/gonar.html">freelancehunt.com/freelancer/gonar.html</a></dd><dt>{L["yt"]}</dt><dd><a href="https://www.youtube.com/@PARANORMA777">PARANORMA</a> &nbsp;/&nbsp; <a href="https://www.youtube.com/@gonarforce">GONAR FORCE</a></dd></dl>
+  <dl class="ct"><dt>{L["tg"]}</dt><dd><a href="https://t.me/aid99999">t.me/aid99999</a></dd><dt>{L["em"]}</dt><dd><a href="mailto:gonar777@gmail.com">gonar777@gmail.com</a></dd><dt>{L["fl"]}</dt><dd><a href="https://freelancehunt.com/freelancer/gonar.html">freelancehunt.com/freelancer/gonar.html</a></dd><dt>{t["web"]}</dt><dd><a href="{SITE_URL}">gonar777-prog.github.io/portfolio-pro</a></dd><dt>{L["yt"]}</dt><dd><a href="https://www.youtube.com/@PARANORMA777">PARANORMA</a> &nbsp;/&nbsp; <a href="https://www.youtube.com/@gonarforce">GONAR FORCE</a></dd></dl>
   <div class="foot"><span>{t["footer"]}</span><span>{t["year"]}</span></div></div></section>'''
     doc = f'<!doctype html><html lang="{lang}" class="{lang}"><head><meta charset="utf-8"><title>GONAR Portfolio {lang.upper()}</title><style>{CSS}</style></head><body class="{lang}">{p1}{p2}{p3}{p4}{p5}{p6}</body></html>'
     f = os.path.join(HERE, f'portfolio_{lang}.html'); open(f, 'w', encoding='utf8').write(doc)
