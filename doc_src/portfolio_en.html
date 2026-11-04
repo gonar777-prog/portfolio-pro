@@ -1,0 +1,102 @@
+<!doctype html><html lang="en" class="en"><head><meta charset="utf-8"><title>GONAR Portfolio EN</title><style>
+@font-face{font-family:'Inter Tight';font-weight:300;src:url('../fonts/d96a3a63.ttf')}
+@font-face{font-family:'Inter Tight';font-weight:400;src:url('../fonts/71d1c35d.ttf')}
+@font-face{font-family:'Inter Tight';font-weight:500;src:url('../fonts/7f6eefa6.ttf')}
+@font-face{font-family:'Inter Tight';font-weight:600;src:url('../fonts/ae138b5c.ttf')}
+@font-face{font-family:'Instrument Serif';src:url('../fonts/90405699.ttf')}
+@font-face{font-family:'IBM Plex Mono';src:url('../fonts/9d122504.ttf')}
+@page{size:A4;margin:0}
+:root{--ink:#151514;--ink2:#1d1d1b;--paper:#ece8df;--mute:#8f8c84;--acc:#8da2ff;--accd:#3446c9;--line:rgba(236,232,223,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font:400 9.6pt/1.5 'Inter Tight',sans-serif;background:var(--ink);color:var(--paper)}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;break-after:page;padding:17mm 16mm 16mm;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto;break-after:auto}
+.light{background:var(--paper);color:var(--ink)}
+.dark{background:var(--ink)}
+.serif{font-family:'Instrument Serif','Times New Roman',serif;font-weight:400;letter-spacing:-.01em}
+.ru .serif{font-family:'Inter Tight',sans-serif;font-weight:300;letter-spacing:-.035em}
+.mono{font:400 7.5pt/1.4 'IBM Plex Mono',monospace;color:var(--mute)}
+.light .mono{color:#6c6a63}
+.head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:.3mm solid var(--line);padding-bottom:3.5mm;margin-bottom:10mm}
+.light .head{border-color:rgba(21,21,20,.2)}
+.head b{font:600 10pt 'Inter Tight'}
+h2{font-size:34pt;line-height:1;margin-bottom:8mm}
+img{display:block;width:100%;height:100%;object-fit:cover}
+/* cover */
+.cover{padding:0;justify-content:space-between}
+.cover__img{position:absolute;inset:0}
+.cover__img img{opacity:.55;filter:saturate(.85)}
+.cover__img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,21,20,.55) 0%,rgba(21,21,20,.25) 35%,rgba(21,21,20,.92) 85%,var(--ink) 100%)}
+.cover>*:not(.cover__img){position:relative;z-index:1}
+.cover__top{padding:16mm 16mm 0;display:flex;justify-content:space-between}
+.cover__mid{padding:0 16mm}
+.cover__word{font:600 112pt/.8 'Inter Tight';letter-spacing:-.065em;margin-left:-3mm}
+.cover__role{font-size:15pt;margin-top:10mm;max-width:130mm;line-height:1.25;font-weight:400}
+.cover__sub{color:#c9c5bb;max-width:110mm;margin-top:5mm}
+.cover__bot{padding:0 16mm 16mm;display:grid;grid-template-columns:auto 1fr;gap:10mm;align-items:end;border-top:.3mm solid var(--line);padding-top:7mm;margin:0 16mm 0;padding-inline:0}
+.yrs{font:300 46pt/1 'Inter Tight';letter-spacing:-.05em;color:var(--acc)}
+.cover__bot dl{display:grid;grid-template-columns:auto 1fr;gap:1.5mm 6mm;font-size:9.5pt}
+.cover__bot dt{color:var(--mute)}
+.cover{padding-bottom:16mm}
+/* profile */
+.big{font-size:27pt;line-height:1.08;max-width:160mm;margin-bottom:9mm}
+.ru .big{font-size:23pt}
+.cols{columns:2;column-gap:10mm;color:#3b3a36}
+.cols p{margin-bottom:3.5mm;break-inside:avoid}
+.pv{display:grid;grid-template-columns:repeat(3,1fr);gap:7mm;margin-top:auto;border-top:.3mm solid rgba(21,21,20,.25);padding-top:6mm}
+.pv h3{font:500 12pt 'Inter Tight';margin-bottom:1.5mm}
+.pv p{color:#55534d;font-size:9pt}
+.pimg{height:62mm;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3mm;margin-bottom:9mm}
+/* skills */
+.sk{display:grid;grid-template-columns:1fr 1fr;gap:9mm 10mm}
+.sk h3{font:500 13pt 'Inter Tight';padding-bottom:2.5mm;border-bottom:.3mm solid var(--acc);margin-bottom:3mm}
+.sk li{list-style:none;padding:2.2mm 0;border-bottom:.2mm solid var(--line);font-size:10.5pt}
+.tools{display:flex;flex-wrap:wrap;gap:2.5mm;margin-top:auto}
+.tools span{border:.3mm solid rgba(236,232,223,.4);border-radius:10mm;padding:2.5mm 5mm;font-size:11pt}
+/* experience */
+.ex{display:grid;gap:0;border-top:.3mm solid rgba(21,21,20,.25)}
+.ex__i{display:grid;grid-template-columns:30mm 1fr;gap:6mm;padding:3.6mm 0;border-bottom:.3mm solid rgba(21,21,20,.25);align-items:center}
+.ex__i .im{height:19mm;overflow:hidden;border-radius:.6mm;background:#ddd}
+.ex__i h3{font:500 12.5pt 'Inter Tight';margin-bottom:.8mm}
+.ex__i p{color:#55534d;font-size:9.2pt}
+/* works */
+.wk{display:grid;grid-template-columns:1fr 1fr;gap:6mm 6mm}
+.wk .im{aspect-ratio:16/9;overflow:hidden;border-radius:.6mm;background:var(--ink2)}
+.wk h3{font:500 10.5pt 'Inter Tight';margin-top:2mm}
+.wkv{display:grid;grid-template-columns:repeat(4,1fr);gap:5mm;margin-top:7mm}
+.wkv .im{aspect-ratio:9/16;overflow:hidden;border-radius:.6mm;background:var(--ink2)}
+.wkv h3{font:500 9.5pt/1.25 'Inter Tight';margin-top:2mm}
+.lede{color:#c9c5bb;max-width:140mm;margin:-3mm 0 7mm}
+/* services */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:0 10mm;margin-bottom:9mm}
+.svc li{list-style:none;padding:2.6mm 0;border-bottom:.2mm solid rgba(21,21,20,.25);font-size:10.5pt;font-weight:500}
+.pr{display:grid;grid-template-columns:repeat(5,1fr);gap:4mm;margin-bottom:auto}
+.pr div{border-top:.5mm solid var(--ink);padding-top:3mm}
+.pr h3{font:500 10pt/1.2 'Inter Tight';margin-bottom:1.2mm}
+.pr p{font-size:8.2pt;color:#55534d}
+.pr .n{font:400 7.5pt 'IBM Plex Mono';color:var(--accd);display:block;margin-bottom:3mm}
+.contact{margin:0 -16mm -16mm;padding:11mm 16mm 14mm;background:var(--ink);color:var(--paper);margin-top:9mm}
+.contact h2{font-size:30pt;margin-bottom:3mm;max-width:150mm}
+.contact .s{color:#c9c5bb;margin-bottom:7mm}
+.ct{display:grid;grid-template-columns:28mm 1fr;gap:2.4mm 4mm;font-size:10.5pt}
+.ct dt{font:400 7.8pt/1.9 'IBM Plex Mono';color:var(--mute)}
+.ct a{color:var(--paper);text-decoration:none;border-bottom:.2mm solid var(--acc)}
+.big-tg{font:600 30pt/1 'Inter Tight';letter-spacing:-.05em;margin-bottom:6mm;color:var(--acc)}
+.foot{display:flex;justify-content:space-between;margin-top:6mm;color:var(--mute);font-size:8pt;border-top:.3mm solid var(--line);padding-top:3mm}
+</style></head><body class="en"><section class="page cover dark">
+ <div class="cover__img"><img src="img/volcano.jpg" alt=""></div>
+ <div class="cover__top"><span class="mono" style="color:#c9c5bb">Portfolio 2026</span><span class="mono" style="color:#c9c5bb">t.me/aid99999</span></div>
+ <div class="cover__mid"><div class="cover__word">GONAR</div><p class="cover__role serif">Video Editor · Motion Designer · Creative Producer</p><p class="cover__sub">Cinematic storytelling, motion graphics, news and social video, AI-assisted pipelines.</p></div>
+ <div class="cover__bot"><div class="yrs">7+</div>
+  <dl><dt>years in design</dt><dd></dd><dt>Telegram</dt><dd>@aid99999</dd><dt>Email</dt><dd>gonar777@gmail.com</dd><dt>Freelancehunt</dt><dd>freelancehunt.com/freelancer/gonar.html</dd></dl></div>
+</section><section class="page light"><div class="head"><b>GONAR</b><span class="mono">Profile · 2/6</span></div>
+ <h2 class="serif">Profile</h2><p class="big serif">I turn ideas into video that is clear on the first second and worth finishing.</p>
+ <div class="pimg"><div style="overflow:hidden"><img src="img/marshrut0.jpg" alt=""></div><div style="overflow:hidden"><img src="img/chaos.jpg" alt=""></div><div style="overflow:hidden"><img src="img/mebel.jpg" alt=""></div></div>
+ <div class="cols"><p>Seven years in design have taken me through studios and teams working on very different subjects: news and social channels, advertising, YouTube, interiors, e-commerce and animation.</p><p>I handle the whole chain: concept and storyboard, editing, motion graphics, sound, thumbnails and delivery. I use AI tools where they save time, and keep timing, taste and final sound in my own hands.</p><p>For studios and brands that means one reliable person who understands formats, templates and brand rules, and delivers files as agreed.</p></div><div class="pv"><div><h3>Range</h3><p>Comfortable in very different genres and visual languages.</p></div><div><h3>Pipeline</h3><p>From script to finished file, with AI-assisted tools where they help.</p></div><div><h3>Reliability</h3><p>Briefs, templates and formats are respected; deliveries are clean.</p></div></div></section><section class="page dark"><div class="head"><b>GONAR</b><span class="mono">Skills & tools · 3/6</span></div><h2 class="serif">Skills & tools</h2><div class="sk"><div><h3>Editing & motion</h3><ul><li>After Effects</li><li>Premiere Pro</li><li>Titles & subtitles</li><li>Sound design & mix</li><li>Colour correction</li></ul></div><div><h3>3D</h3><ul><li>Blender</li><li>Procedural environments</li><li>Lighting & render</li></ul></div><div><h3>Image & design</h3><ul><li>Photoshop</li><li>YouTube thumbnails</li><li>Retouch & compositing</li><li>E-commerce infographics</li></ul></div><div><h3>AI & automation</h3><ul><li>ComfyUI / Stable Diffusion</li><li>ElevenLabs</li><li>Remotion</li><li>Lip-sync & AI video</li></ul></div></div><div class="tools"><span>After Effects</span><span>Premiere Pro</span><span>Photoshop</span><span>Blender</span><span>Remotion</span><span>ComfyUI / Stable Diffusion</span><span>ElevenLabs</span></div></section><section class="page light"><div class="head"><b>GONAR</b><span class="mono">Experience by field · 4/6</span></div><h2 class="serif">Experience by field</h2><div class="ex"><div class="ex__i"><div class="im"><img src="img/u4.jpg" alt=""></div><div><h3>News & social channels</h3><p>Vertical news shorts built to channel templates, with voice-over and sound, delivered fast.</p></div></div><div class="ex__i"><div class="im"><img src="img/telefon.jpg" alt=""></div><div><h3>Advertising & creatives</h3><p>Square and vertical ad creatives, kinetic typography and product promos.</p></div></div><div class="ex__i"><div class="im"><img src="img/th_missing39.jpg" alt=""></div><div><h3>YouTube channels & thumbnails</h3><p>Whole-channel production plus high-contrast covers designed to be clicked.</p></div></div><div class="ex__i"><div class="im"><img src="img/mebel.jpg" alt=""></div><div><h3>Furniture & interiors</h3><p>Reveal reels that turn a construction site into the finished design.</p></div></div><div class="ex__i"><div class="im"><img src="img/bag1.jpg" alt=""></div><div><h3>E-commerce infographics</h3><p>Product cards and infographics for marketplaces.</p></div></div><div class="ex__i"><div class="im"><img src="img/chaos.jpg" alt=""></div><div><h3>3D & AI animation</h3><p>Blender environments, 2.5D comic animation and AI-assisted pipelines.</p></div></div><div class="ex__i"><div class="im"><img src="img/soobshenie.jpg" alt=""></div><div><h3>Animated stories</h3><p>Script, voice, animation and sound for long-form mystery stories.</p></div></div></div></section><section class="page dark"><div class="head"><b>GONAR</b><span class="mono">Selected work · 5/6</span></div><h2 class="serif">Selected work</h2><p class="lede">Eight of eleven projects on the portfolio site. Video, case notes and the latest work are online. </p><div class="wk"><div><div class="im"><img src="img/soobshenie.jpg" alt=""></div><h3>Message From Me</h3><span class="mono">Animated story · 2:39</span></div><div><div class="im"><img src="img/volcano.jpg" alt=""></div><h3>Volcanic Valley</h3><span class="mono">3D environment · Blender</span></div><div><div class="im"><img src="img/chaos.jpg" alt=""></div><h3>Chaos Reality</h3><span class="mono">2.5D style test</span></div><div><div class="im"><img src="img/marshrut0.jpg" alt=""></div><h3>Route 0</h3><span class="mono">Animated story · 2:56</span></div></div><div class="wkv"><div><div class="im"><img src="img/mebel.jpg" alt=""></div><h3>Furniture & Apartment</h3><span class="mono">Interior reveal · 9:16</span></div><div><div class="im"><img src="img/remont1.jpg" alt=""></div><h3>Renovation Studio</h3><span class="mono">Social reel · 9:16</span></div><div><div class="im"><img src="img/u4.jpg" alt=""></div><h3>Energy attack report</h3><span class="mono">News short · UNN</span></div><div><div class="im"><img src="img/tz3.jpg" alt=""></div><h3>Drone attack report</h3><span class="mono">News short · TEZA</span></div></div></section><section class="page light"><div class="head"><b>GONAR</b><span class="mono">Services · 6/6</span></div>
+ <h2 class="serif" style="font-size:28pt;margin-bottom:5mm">Services</h2><ul class="svc"><li>Editing, reels and dynamic videos</li><li>Motion graphics and titles</li><li>Subtitles and text animation</li><li>Colour correction and retouch</li><li>AI video and lip-sync</li><li>YouTube thumbnails and covers</li><li>Remastering and upscaling</li><li>News and social-media shorts</li><li>Whole-channel production</li></ul>
+ <h2 class="serif" style="font-size:28pt;margin-bottom:5mm">Process</h2><div class="pr"><div><span class="n">01</span><h3>Brief</h3><p>Goal, audience, format, deadline.</p></div><div><span class="n">02</span><h3>References & storyboard</h3><p>A shared picture of the result.</p></div><div><span class="n">03</span><h3>Edit & motion</h3><p>Cut, animation, sound, preview link.</p></div><div><span class="n">04</span><h3>Revisions</h3><p>Clear, consolidated feedback.</p></div><div><span class="n">05</span><h3>Delivery</h3><p>Final files in the formats you need.</p></div></div>
+ <div class="contact"><h2 class="serif">Let’s make something worth watching.</h2><p class="s">The fastest way to reach me is Telegram.</p>
+  <div class="big-tg">@aid99999</div>
+  <dl class="ct"><dt>Telegram</dt><dd><a href="https://t.me/aid99999">t.me/aid99999</a></dd><dt>Email</dt><dd><a href="mailto:gonar777@gmail.com">gonar777@gmail.com</a></dd><dt>Freelancehunt</dt><dd><a href="https://freelancehunt.com/freelancer/gonar.html">freelancehunt.com/freelancer/gonar.html</a></dd><dt>YouTube</dt><dd><a href="https://www.youtube.com/@PARANORMA777">PARANORMA</a> &nbsp;/&nbsp; <a href="https://www.youtube.com/@gonarforce">GONAR FORCE</a></dd></dl>
+  <div class="foot"><span>GONAR · Video Editor · Motion Designer</span><span>2026</span></div></div></section></body></html>

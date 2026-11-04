@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GONAR — Video editor &amp; motion designer</title>
+<meta name="description" content="Video editor and motion designer. Cinematic storytelling, motion graphics, news and social shorts, AI-assisted pipelines. Available for freelance projects.">
+<meta name="theme-color" content="#151514">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GONAR — Video editor &amp; motion designer">
+<meta property="og:description" content="Cinematic storytelling, motion graphics, news and social shorts. Available for freelance projects.">
+<meta property="og:image" content="media/img/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="media/poster/reel.webp" as="image">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
+<a class="skip-link" href="#work">Skip to content</a>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__tc"><span id="introTc">00:00:00:00</span></div>
+  <div class="intro__name">GONAR</div>
+  <button class="intro__skip" id="introSkip" type="button" data-i18n="skip">Skip</button>
+  <div class="intro__bar"><i id="introBar"></i></div>
+</div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="GONAR, top of page">GONAR</a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#work" data-i18n="nav_work">Work</a>
+    <a href="#shorts" data-i18n="nav_shorts">Shorts</a>
+    <a href="#services" data-i18n="nav_services">Services</a>
+    <a href="#about" data-i18n="nav_about">About</a>
+    <a href="#contact" data-i18n="nav_contact">Contact</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="ru" aria-pressed="false">RU</button>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__media">
+    <video id="heroVideo" src="media/video/reel_bg.mp4" poster="media/poster/reel.webp" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <div class="hero__shade"></div>
+  </div>
+  <div class="hero__top">
+    <p class="hero__role" data-i18n="hero_role">Video editor &amp; motion designer</p>
+    <p class="hero__tc" aria-hidden="true"><span id="tc">00:00:00:00</span><span class="hero__tcl" data-i18n="reel_label">Showreel</span></p>
+  </div>
+  <div class="hero__main">
+    <h1 class="hero__line serif" data-split data-i18n="hero_line">Cinematic storytelling, built with AI-assisted pipelines.</h1>
+    <div class="hero__cta">
+      <a class="btn btn--solid mag" href="https://t.me/aid99999" target="_blank" rel="noopener" data-cursor="Telegram"><span data-i18n="cta_tg">Message on Telegram</span></a>
+      <button class="btn mag" id="reelBtn" type="button" data-cursor="Play"><i class="play" aria-hidden="true"></i><span data-i18n="cta_reel">Play reel with sound</span></button>
+      <a class="btn btn--ghost mag" data-pdf href="assets/docs/GONAR_Portfolio_EN.pdf" download target="_blank" rel="noopener"><span data-i18n="cta_pdf">Download portfolio (PDF)</span></a>
+    </div>
+  </div>
+  <div class="hero__word" aria-hidden="true">GONAR</div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work" aria-labelledby="workH">
+  <div class="work__pin" id="workPin">
+    <div class="work__head wrap">
+      <h2 id="workH" class="h2 serif" data-split data-i18n="work_h">Selected work</h2>
+      <p class="lede" data-i18n="work_s">Eleven projects across animation, motion and 3D. Hover to preview, click to open.</p>
+      <p class="work__hint mono" aria-hidden="true"><span data-i18n="drag">Scroll</span> <i></i></p>
+    </div>
+    <div class="work__viewport"><ul class="work__track" id="workTrack"></ul></div>
+  </div>
+</section>
+
+<!-- SHORTS -->
+<section class="shorts section" id="shorts" aria-labelledby="shortsH">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="shortsH" class="h2 serif" data-split data-i18n="shorts_h">News &amp; social shorts</h2>
+      <p class="lede" data-i18n="shorts_s">Vertical 9:16 edits.</p>
+    </div>
+    <ul class="shorts__grid" id="shortsGrid"></ul>
+  </div>
+</section>
+
+<!-- THUMBS -->
+<section class="thumbs section" id="thumbs" aria-labelledby="thumbsH">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="thumbsH" class="h2 serif" data-split data-i18n="thumbs_h">Thumbnails and covers</h2>
+      <p class="lede" data-i18n="thumbs_s"></p>
+    </div>
+    <ul class="thumbs__grid" id="thumbsGrid"></ul>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<div class="marquee" aria-hidden="true"><div class="marquee__in" id="marquee"></div></div>
+<section class="services section" id="services" aria-labelledby="servH">
+  <div class="wrap grid">
+    <h2 id="servH" class="h2 serif services__h" data-split data-i18n="services_h">What I do</h2>
+    <ul class="services__list" id="servList"></ul>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process section" id="process" aria-labelledby="procH">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="procH" class="h2 serif" data-split data-i18n="process_h">How we work</h2>
+      <p class="lede" data-i18n="process_s">Five steps, one point of contact.</p>
+    </div>
+    <ol class="process__list" id="procList"></ol>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools section" id="tools" aria-labelledby="toolsH">
+  <div class="wrap">
+    <h2 id="toolsH" class="h3 serif" data-i18n="tools_h">Tools I use daily</h2>
+    <ul class="tools__list" id="toolsList"></ul>
+  </div>
+</section>
+
+<!-- CHANNELS -->
+<section class="channels section" id="channels" aria-labelledby="chH">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="chH" class="h2 serif" data-split data-i18n="channels_h">Own channels</h2>
+      <p class="lede" data-i18n="channels_s"></p>
+    </div>
+    <div class="channels__grid">
+      <a class="chan" href="https://www.youtube.com/@PARANORMA777" target="_blank" rel="noopener" data-cursor="Open">
+        <div class="chan__img"><img src="media/img/shapka_kanala.webp" alt="PARANORMA channel banner" loading="lazy" width="1200" height="670"></div>
+        <div class="chan__txt"><h3>PARANORMA</h3><p data-i18n="ch_p"></p><span class="chan__go" data-i18n="visit">Open channel</span></div>
+      </a>
+      <a class="chan" href="https://www.youtube.com/@gonarforce" target="_blank" rel="noopener" data-cursor="Open">
+        <div class="chan__img"><img src="media/img/gf_logo.webp" alt="GONAR FORCE channel logo" loading="lazy" width="1280" height="720"></div>
+        <div class="chan__txt"><h3>GONAR FORCE</h3><p data-i18n="ch_g"></p><span class="chan__go" data-i18n="visit">Open channel</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about section" id="about" aria-labelledby="aboutH">
+  <div class="wrap grid">
+    <h2 id="aboutH" class="h3 serif about__h" data-i18n="about_h">About</h2>
+    <div class="about__body">
+      <p class="about__big serif" data-split data-i18n="about_1"></p>
+      <p class="about__p" data-i18n="about_2"></p>
+      <a class="btn btn--solid mag about__pdf" data-pdf href="assets/docs/GONAR_Portfolio_EN.pdf" download target="_blank" rel="noopener"><span data-i18n="cta_pdf">Download portfolio (PDF)</span></a>
+      <dl class="stats">
+        <div><dt data-count="7" data-suf="+">0</dt><dd data-i18n="st_years">years in design</dd></div>
+        <div><dt data-count="11">0</dt><dd data-i18n="st_proj">selected projects</dd></div>
+        <div><dt data-count="8">0</dt><dd data-i18n="st_news">news shorts</dd></div>
+        <div><dt data-count="2">0</dt><dd data-i18n="st_ch">own YouTube channels</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="wrap exp">
+    <h3 class="h3 serif" data-i18n="exp_h">Experience by field</h3>
+    <ul class="exp__list" id="expList"></ul>
+    <h3 class="h3 serif exp__h2" data-i18n="appr_h">Approach</h3>
+    <ul class="appr" id="apprList"></ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact section" id="contact" aria-labelledby="contactH">
+  <div class="wrap">
+    <h2 id="contactH" class="contact__h serif" data-split data-i18n="contact_h">Let’s make something worth watching.</h2>
+    <p class="lede contact__s" data-i18n="contact_s"></p>
+    <a class="contact__tg mag" href="https://t.me/aid99999" target="_blank" rel="noopener" data-cursor="Write"><span>@aid99999</span><svg viewBox="0 0 24 24" width="0.7em" height="0.7em" aria-hidden="true"><path d="M5 19L19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    <ul class="contact__list">
+      <li><span class="mono">PDF</span><a data-pdf href="assets/docs/GONAR_Portfolio_EN.pdf" download target="_blank" rel="noopener" data-i18n="cta_pdf">Download portfolio (PDF)</a></li>
+      <li><span class="mono">Email</span><a href="mailto:gonar777@gmail.com">gonar777@gmail.com</a><button type="button" class="copy" id="copyMail" data-i18n="email_copy">Copy email</button></li>
+      <li><span class="mono">Freelancehunt</span><a href="https://freelancehunt.com/freelancer/gonar.html" target="_blank" rel="noopener" data-i18n="fl">Freelancehunt profile</a></li>
+      <li><span class="mono">YouTube</span><a href="https://www.youtube.com/@PARANORMA777" target="_blank" rel="noopener" data-i18n="yt1">PARANORMA on YouTube</a><a href="https://www.youtube.com/@gonarforce" target="_blank" rel="noopener" data-i18n="yt2">GONAR FORCE on YouTube</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in"><span data-i18n="footer">© 2026 GONAR.</span><a href="#top" data-i18n="top">Back to top</a></div>
+</footer>
+
+<!-- CASE OVERLAY -->
+<div class="case" id="case" role="dialog" aria-modal="true" aria-labelledby="caseTitle" hidden>
+  <div class="case__scroll" id="caseScroll">
+    <div class="case__bar wrap">
+      <button type="button" class="case__back" id="caseBack"><span aria-hidden="true">←</span> <span data-i18n="back">Back to work</span></button>
+      <span class="case__ch mono" id="caseCh"></span>
+    </div>
+    <div class="case__stage" id="caseStage"><video id="caseVideo" controls playsinline preload="metadata"></video></div>
+    <div class="case__info wrap">
+      <div class="case__tit"><p class="mono" id="caseType"></p><h2 id="caseTitle" class="serif"></h2><p class="case__line" id="caseLine"></p></div>
+      <dl class="case__meta" id="caseMeta"></dl>
+      <div class="case__txt" id="caseTxt"></div>
+    </div>
+    <button type="button" class="case__next wrap" id="caseNext"><span class="mono" data-i18n="next">Next project</span><span class="serif" id="caseNextT"></span></button>
+  </div>
+</div>
+
+<!-- REEL LIGHTBOX -->
+<div class="reel" id="reel" role="dialog" aria-modal="true" aria-label="Showreel" hidden>
+  <button type="button" class="reel__x" id="reelX"><span data-i18n="close">Close</span></button>
+  <video id="reelVideo" src="media/video/reel_full.mp4" controls playsinline preload="none"></video>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursorLabel"></span></div>
+<div class="grain" aria-hidden="true"></div>
+
+<script src="lib/gsap.min.js"></script>
+<script src="lib/ScrollTrigger.min.js"></script>
+<script src="lib/lenis.min.js"></script>
+<script src="js/content.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
