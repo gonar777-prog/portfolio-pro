@@ -47,13 +47,13 @@ function renderLists() {
     <li class="short" data-id="${n.id}"><a href="#/work/${n.id}" data-cursor="Play" data-open="${n.id}">
       <div class="short__m"><img src="media/poster/${n.id}.webp" alt="${L(n.title)}" width="540" height="960" loading="lazy" decoding="async"></div>
       <div class="short__t"><h3>${L(n.title)}</h3><span>${n.ch} · ${n.dur}</span></div></a></li>`).join('');
-  $('#thumbsGrid').innerHTML = S.THUMBS.map(t => `<li class="thumb"><img src="media/img/${t.f}.webp" alt="${L(t.alt)}" width="1280" height="${Math.round(1280 / t.ar)}" loading="lazy" decoding="async"></li>`).join('');
   $('#servList').innerHTML = S.SERVICES.map(s => `<li class="serv"><h3>${L(s.t)}</h3><p>${L(s.d)}</p></li>`).join('');
   $('#procList').innerHTML = S.PROCESS.map(s => `<li class="step"><h3>${L(s.t)}</h3><p>${L(s.d)}</p></li>`).join('');
   $('#expList').innerHTML = S.EXP.map(s => `<li class="exp__i"><h4>${L(s.t)}</h4><p>${L(s.d)}</p></li>`).join('');
   $('#apprList').innerHTML = S.APPR.map(s => `<li class="step"><h3>${L(s.t)}</h3><p>${L(s.d)}</p></li>`).join('');
   $$('[data-pdf]').forEach(a => { a.href = `assets/docs/GONAR_Portfolio_${lang.toUpperCase()}.pdf`; a.setAttribute('download', `GONAR_Portfolio_${lang.toUpperCase()}.pdf`); });
-  $('#toolsList').innerHTML = S.TOOLS.map(t => `<li>${t}</li>`).join('');
+  $('#toolGroups').innerHTML = S.TOOLGROUPS.map(g => `<div class="tg"><h3>${L(g.g)}</h3><ul>${g.i.map(x => `<li>${typeof x === 'string' ? x : L(x)}</li>`).join('')}</ul></div>`).join('');
+  renderArchive(); renderGallery();
   const m = S.MARQUEE[lang].map(x => `<span>${x}</span>`).join('');
   $('#marquee').innerHTML = m + m + m + m;
   bindHover();
@@ -86,10 +86,11 @@ $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
 
 /* ---------- hover previews ---------- */
 function bindHover() {
-  const make = (host, id, box) => {
+  const make = (host, id, box, base = 'media/loop/') => {
+    if (host._hb) return; host._hb = 1;
     let v = null;
     const on = () => {
-      if (!v) { v = document.createElement('video'); v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'auto'; v.setAttribute('aria-hidden', 'true'); v.src = `media/loop/${id}.mp4`; box.appendChild(v); }
+      if (!v) { v = document.createElement('video'); v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'auto'; v.setAttribute('aria-hidden', 'true'); v.src = `${base}${id}.mp4`; box.appendChild(v); }
       host.classList.add('is-hot'); v.play().catch(() => {});
     };
     const off = () => { host.classList.remove('is-hot'); if (v) v.pause(); };
@@ -100,7 +101,8 @@ function bindHover() {
   };
   $$('.card').forEach(c => make(c, c.dataset.id, $('.card__m', c)));
   $$('.short').forEach(c => make(c, c.dataset.id, $('.short__m', c)));
-  $$('[data-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openCase(a.dataset.open, a); }));
+  $$('.acard').forEach(c => make(c, c.dataset.id, $('.acard__m', c), c.dataset.news ? 'media/loop/' : 'media/archive/loop/'));
+  $$('[data-open]').forEach(a => { if (a._cb) return; a._cb = 1; a.addEventListener('click', e => { e.preventDefault(); openCase(a.dataset.open, a); }); });
 }
 
 /* ---------- case overlay ---------- */
@@ -112,7 +114,8 @@ function fillCase(it, load) {
   $('#caseLine').textContent = L(it.line);
   $('#caseCh').textContent = it.kind === 'news' ? it.ch : '';
   $('#caseMeta').innerHTML = [[T('role'), L(it.role)], [T('tools'), it.tools.join(', ')], [T('format'), it.fmt], [T('year'), it.year]].map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
-  $('#caseTxt').innerHTML = `<div><h3>${T('brief')}</h3><p>${L(it.brief)}</p></div><div><h3>${T('solution')}</h3><p>${L(it.solution)}</p></div>`;
+  const ytU = it.yt ? S.links[it.yt] : '';
+  $('#caseTxt').innerHTML = `<div><h3>${T('brief')}</h3><p>${L(it.brief)}</p></div><div><h3>${T('solution')}</h3><p>${L(it.solution)}</p></div>` + (ytU ? `<p class="case__yt"><a href="${ytU}" target="_blank" rel="noopener">${T('watch_yt')} ↗</a></p>` : '');
   const i = ITEMS.indexOf(it), nxt = ITEMS[(i + 1) % ITEMS.length];
   $('#caseNextT').textContent = L(nxt.title); $('#caseNext').dataset.id = nxt.id;
   if (load) { cv.style.setProperty('--ar', it.ar); cv.poster = `media/poster/${it.id}.webp`; cv.src = `media/video/${it.id}.mp4`; }
@@ -125,7 +128,7 @@ function openCase(id, from, silent) {
   if (first) { caseEl.hidden = false; if (lenis) lenis.stop(); document.body.style.overflow = 'hidden'; }
   const kids = [$('.case__bar'), $('.case__stage'), $('.case__info'), $('.case__next')];
   if (reduced) { gsap.set(caseEl, { clipPath: 'none' }); cv.play().catch(() => {}); $('#caseBack').focus(); return; }
-  const r = from ? from.querySelector('.card__m,.short__m').getBoundingClientRect() : null;
+  const r = from ? from.querySelector('.card__m,.short__m,.acard__m').getBoundingClientRect() : null;
   const W = innerWidth, H = innerHeight;
   const start = r && first ? `inset(${r.top}px ${W - r.right}px ${H - r.bottom}px ${r.left}px)` : 'inset(50% 50% 50% 50%)';
   gsap.killTweensOf([caseEl, ...kids]);
@@ -146,9 +149,71 @@ function closeCase(silent) {
 }
 $('#caseBack').addEventListener('click', () => closeCase());
 $('#caseNext').addEventListener('click', e => openCase(e.currentTarget.dataset.id, null));
-addEventListener('keydown', e => { if (e.key === 'Escape') { if (!$('#reel').hidden) closeReel(); else if (current) closeCase(); } });
+addEventListener('keydown', e => { if (e.key === 'Escape') { if (!$('#lb').hidden) return; if (!$('#reel').hidden) closeReel(); else if (current) closeCase(); } });
 addEventListener('popstate', () => { const m = location.hash.match(/^#\/work\/(.+)$/); if (m) { if (byId(m[1]) && m[1] !== current) openCase(m[1], null, true); } else if (current) closeCase(true); });
 $('#caseScroll').setAttribute('data-lenis-prevent', '');
+
+
+/* ---------- archive + gallery ---------- */
+let archCat = 'all', galCat = 'all';
+const newsAsArch = () => S.NEWS.map(n => ({ id: n.id, cat: 'news', ar: 0.5625, dur: n.dur, t: n.title, d: { en: n.ch + ' · vertical news short', ru: n.ch + ' · вертикальный новостной ролик' }, news: true }));
+const archItems = () => [...window.ARCH, ...newsAsArch()];
+function filtersHtml(cats, cur, items, key) {
+  return Object.keys(cats).filter(k => k === 'all' || items.some(i => (i[key]) === k)).map(k => `<button type="button" data-f="${k}" aria-pressed="${k === cur}">${cats[k][lang] || cats[k].en}</button>`).join('');
+}
+function renderArchive() {
+  const items = archItems();
+  $('#archFilters').innerHTML = filtersHtml(window.ACATS, archCat, items, 'cat');
+  $('#archGrid').innerHTML = items.filter(i => archCat === 'all' || i.cat === archCat).map(i => {
+    const poster = i.news ? `media/poster/${i.id}.webp` : `media/archive/poster/${i.id}.jpg`;
+    return `<li class="acard" data-id="${i.id}" ${i.news ? 'data-news="1"' : ''}><a href="#" class="acard__a" data-cursor="${i.ar < 1 ? 'Play' : 'Play'}" data-arch="${i.id}">
+      <div class="acard__m" style="aspect-ratio:${i.ar}"><img src="${poster}" alt="${L(i.t)}" loading="lazy" decoding="async"></div>
+      <div class="acard__t"><h3>${L(i.t)}</h3><span>${i.dur}</span></div></a></li>`;
+  }).join('');
+  $$('#archFilters button').forEach(b => b.onclick = () => { archCat = b.dataset.f; renderArchive(); bindHover(); });
+  $$('[data-arch]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); const it = items.find(x => x.id === a.dataset.arch); if (it.news) openCase(it.id, a); else openLb('v', it); }));
+}
+function renderGallery() {
+  const items = window.GALLERY;
+  $('#galFilters').innerHTML = filtersHtml(window.GCATS, galCat, items, 'c');
+  $('#galGrid').innerHTML = items.filter(i => galCat === 'all' || i.c === galCat).map(i =>
+    `<li class="gitem"><a href="#" data-gal="${i.id}" data-cursor="View"><img src="media/gallery/t_${i.id}.webp" alt="${i[lang] || i.en}" width="600" height="${Math.round(600 / i.ar)}" loading="lazy" decoding="async" style="aspect-ratio:${i.ar}"></a></li>`).join('');
+  $$('#galFilters button').forEach(b => b.onclick = () => { galCat = b.dataset.f; renderGallery(); });
+  const vis = items.filter(i => galCat === 'all' || i.c === galCat);
+  $$('[data-gal]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openLb('i', vis.find(x => x.id === a.dataset.gal), vis); }));
+  if (window.ScrollTrigger) ScrollTrigger.refresh();
+}
+/* viewer: video (v) or image (i) */
+const lb = $('#lb'); let lbList = null, lbIdx = 0, lbKind = 'v';
+function lbFill(kind, it) {
+  const M = $('#lbM'); M.innerHTML = ''; $('#lbV').innerHTML = '';
+  if (kind === 'v') {
+    const vid = document.createElement('video'); vid.controls = true; vid.playsInline = true; vid.preload = 'metadata';
+    const set = (id, ar) => { vid.src = `media/archive/video/${id}.mp4`; vid.poster = `media/archive/poster/${id}.jpg`; vid.style.aspectRatio = ar; vid.style.setProperty('--ar', ar); lb.classList.toggle('is-v', ar < 1); lb.classList.toggle('is-sq', ar === 1); };
+    set(it.id, it.ar); M.appendChild(vid);
+    $('#lbT').textContent = L(it.t); $('#lbD').textContent = L(it.d);
+    if (it.variants) { const all = [{ id: it.id, label: it.ar === 1 ? '1:1' : '16:9', ar: it.ar }, ...it.variants];
+      $('#lbV').innerHTML = all.map((v, i) => `<button type="button" data-v="${i}" aria-pressed="${i === 0}">${v.label}</button>`).join('');
+      $$('#lbV button').forEach(b => b.onclick = () => { const v = all[+b.dataset.v]; set(v.id, v.ar); vid.play().catch(() => {}); $$('#lbV button').forEach(x => x.setAttribute('aria-pressed', x === b)); }); }
+    vid.play().catch(() => {});
+  } else {
+    lb.classList.remove('is-v', 'is-sq');
+    const img = document.createElement('img'); img.src = `media/gallery/${it.id}.webp`; img.alt = it[lang] || it.en; M.appendChild(img);
+    $('#lbT').textContent = it[lang] || it.en; $('#lbD').textContent = '';
+  }
+}
+function openLb(kind, it, list) {
+  lbKind = kind; lbList = list || null; lbIdx = list ? list.indexOf(it) : 0;
+  lb.hidden = false; document.body.style.overflow = 'hidden'; if (lenis) lenis.stop();
+  $('#lbP').hidden = $('#lbN').hidden = !list;
+  lbFill(kind, it); $('#lbX').focus();
+  if (!reduced) gsap.fromTo(lb, { opacity: 0 }, { opacity: 1, duration: .35 });
+}
+function closeLb() { const v = $('video', lb); if (v) { v.pause(); v.removeAttribute('src'); v.load(); } $('#lbM').innerHTML = ''; lb.hidden = true; document.body.style.overflow = current ? 'hidden' : ''; if (!current && lenis) lenis.start(); }
+function lbStep(d) { if (!lbList) return; lbIdx = (lbIdx + d + lbList.length) % lbList.length; lbFill('i', lbList[lbIdx]); }
+$('#lbX').addEventListener('click', closeLb); $('#lbP').addEventListener('click', () => lbStep(-1)); $('#lbN').addEventListener('click', () => lbStep(1));
+lb.addEventListener('click', e => { if (e.target === lb || e.target.id === 'lbF') closeLb(); });
+addEventListener('keydown', e => { if (lb.hidden) return; if (e.key === 'Escape') closeLb(); else if (e.key === 'ArrowLeft') lbStep(-1); else if (e.key === 'ArrowRight') lbStep(1); });
 
 /* ---------- reel lightbox ---------- */
 const reelEl = $('#reel'), rv = $('#reelVideo'), hv = $('#heroVideo');
@@ -226,6 +291,7 @@ $('#copyMail').addEventListener('click', async e => {
 document.addEventListener('visibilitychange', () => { if (document.hidden) { hv.pause(); } else if (reelEl.hidden) hv.play().catch(() => {}); });
 
 /* boot */
+$('#stVideo').dataset.count = S.CASES.length + S.NEWS.length + window.ARCH.length; $('#stDesign').dataset.count = window.GALLERY.length;
 applyLang(); setupScroll(); intro();
 const m = location.hash.match(/^#\/work\/(.+)$/); if (m && byId(m[1])) setTimeout(() => openCase(m[1], null, true), 300);
 if (reduced) hv.removeAttribute('autoplay');

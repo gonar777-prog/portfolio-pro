@@ -47,3 +47,10 @@ PDF-ПОРТФОЛИО (A4, 6 страниц, EN и RU)
   Пересборка: python doc_src/build_pdf.py (нужен установленный Microsoft Edge, профиль пишется на D:).
   SITE_URL в build_pdf.py = https://gonar777-prog.github.io/portfolio-pro/ (стр. Selected work и контакты).
   Кейс "Furniture & Apartment Project": media/*/mebel.*, источник D:\Рабочий стол СКА\Новая папка (4)\проект мебель и квартира 14.10.24\готово прав.mp4
+
+АРХИВ И ГАЛЕРЕЯ (все работы первого сайта)
+  js/archive.js  - список видео архива (ARCH: id, категория, подписи RU/EN). Файлы: media/archive/{video,loop,poster} (хардлинки на
+                   D:\Claude\portfolio_sitessets; у роликов с пиком выше -6 дБ - копия с пониженной громкостью, видео без перекодирования).
+  js/gallery.js  - галерея дизайна (57 изображений, media/gallery; t_ - миниатюры). Генерируется: python tools/gen_archive_js.py
+  Пересборка медиа архива: python tools/build_archive.py. Фильтры архива/галереи строятся из полей cat / c автоматически.
+  Не включено: th_yasmina (клиентская обложка с человеком).

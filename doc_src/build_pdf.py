@@ -19,11 +19,11 @@ T = {
         'I handle the whole chain: concept and storyboard, editing, motion graphics, sound, thumbnails and delivery. I use AI tools where they save time, and keep timing, taste and final sound in my own hands.',
         'For studios and brands that means one reliable person who understands formats, templates and brand rules, and delivers files as agreed.'],
  pv=[('Range','Comfortable in very different genres and visual languages.'),('Pipeline','From script to finished file, with AI-assisted tools where they help.'),('Reliability','Briefs, templates and formats are respected; deliveries are clean.')],
- s_h='Skills & tools',
- sk=[('Editing & motion',['After Effects','Premiere Pro','Titles & subtitles','Sound design & mix','Colour correction']),
+ s_h='Tools I work with',
+ sk=[('Editing & motion',['After Effects','Premiere Pro','Remotion (motion in code)','Titles & subtitles','Colour correction']),
      ('3D',['Blender','Procedural environments','Lighting & render']),
      ('Image & design',['Photoshop','YouTube thumbnails','Retouch & compositing','E-commerce infographics']),
-     ('AI & automation',['ComfyUI / Stable Diffusion','ElevenLabs','Remotion','Lip-sync & AI video'])],
+     ('AI & sound',['ComfyUI / Stable Diffusion','Whisper · Real-ESRGAN','ElevenLabs (voice, effects)','Sound design & mix','FFmpeg'])],
  e_h='Experience by field',
  ex=[('News & social channels','Vertical news shorts built to channel templates, with voice-over and sound, delivered fast.','u4.webp'),
      ('Advertising & creatives','Square and vertical ad creatives, kinetic typography and product promos.','telefon.webp'),
@@ -51,11 +51,11 @@ T = {
         'Беру всю цепочку: концепция и раскадровка, монтаж, моушн-графика, звук, превью и сдача. Нейросети использую там, где они экономят время, а ритм, вкус и финальный звук остаются за мной.',
         'Для студий и брендов это один надёжный специалист, который понимает форматы, шаблоны и правила бренда и сдаёт файлы как договорились.'],
  pv=[('Диапазон','Уверенно работаю в очень разных жанрах и визуальных языках.'),('Пайплайн','От сценария до готового файла, с AI-инструментами там, где они помогают.'),('Надёжность','Бриф, шаблоны и форматы соблюдаются; сдача чистая.')],
- s_h='Навыки и инструменты',
- sk=[('Монтаж и моушн',['After Effects','Premiere Pro','Титры и субтитры','Звуковой дизайн и сведение','Цветокоррекция']),
+ s_h='С чем я работаю',
+ sk=[('Монтаж и моушн',['After Effects','Premiere Pro','Remotion (моушн в коде)','Титры и субтитры','Цветокоррекция']),
      ('3D',['Blender','Процедурные окружения','Свет и рендер']),
      ('Изображение и дизайн',['Photoshop','Превью для YouTube','Ретушь и композитинг','Инфографика для e-commerce']),
-     ('AI и автоматизация',['ComfyUI / Stable Diffusion','ElevenLabs','Remotion','Липсинк и AI-видео'])],
+     ('AI и звук',['ComfyUI / Stable Diffusion','Whisper · Real-ESRGAN','ElevenLabs (голос, эффекты)','Звуковой дизайн и сведение','FFmpeg'])],
  e_h='Опыт по направлениям',
  ex=[('Новостные и соцмедиа-каналы','Вертикальные новостные ролики по шаблонам каналов, с озвучкой и звуком, быстрая сдача.','u4.webp'),
      ('Реклама и креативы','Квадратные и вертикальные рекламные креативы, кинетическая типографика и промо.','telefon.webp'),
@@ -202,7 +202,7 @@ def build(lang):
  <h2 class="serif" style="font-size:28pt;margin-bottom:5mm">{t["pr_h"]}</h2><div class="pr">{pr}</div>
  <div class="contact"><h2 class="serif">{t["c_h"]}</h2><p class="s">{t["c_s"]}</p>
   <div class="big-tg">@aid99999</div>
-  <dl class="ct"><dt>{L["tg"]}</dt><dd><a href="https://t.me/aid99999">t.me/aid99999</a></dd><dt>{L["em"]}</dt><dd><a href="mailto:gonar777@gmail.com">gonar777@gmail.com</a></dd><dt>{L["fl"]}</dt><dd><a href="https://freelancehunt.com/freelancer/gonar.html">freelancehunt.com/freelancer/gonar.html</a></dd><dt>{t["web"]}</dt><dd><a href="{SITE_URL}">gonar777-prog.github.io/portfolio-pro</a></dd><dt>{L["yt"]}</dt><dd><a href="https://www.youtube.com/@PARANORMA777">PARANORMA</a> &nbsp;/&nbsp; <a href="https://www.youtube.com/@gonarforce">GONAR FORCE</a></dd></dl>
+  <dl class="ct"><dt>{L["tg"]}</dt><dd><a href="https://t.me/aid99999">t.me/aid99999</a></dd><dt>{L["em"]}</dt><dd><a href="mailto:gonar777@gmail.com">gonar777@gmail.com</a></dd><dt>{L["fl"]}</dt><dd><a href="https://freelancehunt.com/freelancer/gonar.html">freelancehunt.com/freelancer/gonar.html</a></dd><dt>{t["web"]}</dt><dd><a href="{SITE_URL}">gonar777-prog.github.io/portfolio-pro</a></dd></dl>
   <div class="foot"><span>{t["footer"]}</span><span>{t["year"]}</span></div></div></section>'''
     doc = f'<!doctype html><html lang="{lang}" class="{lang}"><head><meta charset="utf-8"><title>GONAR Portfolio {lang.upper()}</title><style>{CSS}</style></head><body class="{lang}">{p1}{p2}{p3}{p4}{p5}{p6}</body></html>'
     f = os.path.join(HERE, f'portfolio_{lang}.html'); open(f, 'w', encoding='utf8').write(doc)

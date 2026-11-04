@@ -6,7 +6,7 @@ window.SITE = {
 
   /* ar = ширина/высота видео */
   CASES: [
-    { id:"soobshenie", year:2026, ar:1.778, fmt:"16:9 · 2:39",
+    { id:"soobshenie", yt:"paranorma", year:2026, ar:1.778, fmt:"16:9 · 2:39",
       title:{en:"Message From Me", ru:"Сообщение от меня"},
       type:{en:"Animated story", ru:"Анимационная история"},
       role:{en:"Story, animation, voice, sound, edit", ru:"Сюжет, анимация, озвучка, звук, монтаж"},
@@ -14,7 +14,7 @@ window.SITE = {
       line:{en:"A 2:39 animated mystery with full voice acting, timed subtitles and sound design.", ru:"Анимационный мистический рассказ на 2:39: озвучка по ролям, точные субтитры, звуковой дизайн."},
       brief:{en:"Hold attention for almost three minutes with simple flat illustration and no live footage.", ru:"Удержать внимание почти три минуты простой плоской графикой, без живой съёмки."},
       solution:{en:"Paced the story line by line: every voice line has its own emotion reference, subtitles are timed to the audio, and sound carries the tension between scenes.", ru:"Выстроил ритм по репликам: у каждой фразы своя эмоция, субтитры точно по звуку, а напряжение между сценами держит звуковой дизайн."} },
-    { id:"ostrov", year:2026, ar:1.778, fmt:"16:9 · 2:40",
+    { id:"ostrov", yt:"paranorma", year:2026, ar:1.778, fmt:"16:9 · 2:40",
       title:{en:"The Island That Isn't", ru:"Остров, которого нет"},
       type:{en:"Animated story", ru:"Анимационная история"},
       role:{en:"Storyboard fit, animation, sound design, edit", ru:"Раскадровка под озвучку, анимация, звук, монтаж"},
@@ -22,7 +22,7 @@ window.SITE = {
       line:{en:"Narrated mystery with a supplied voice track fitted to the storyboard, no speed-ups, no cut phrases.", ru:"Мистический рассказ: готовая озвучка встроена в раскадровку без ускорений и обрезанных фраз."},
       brief:{en:"Fit a ready-made narration to the picture without speeding the voice up or cutting a single phrase.", ru:"Подогнать готовую озвучку под картинку, не ускоряя голос и не обрезая фразы."},
       solution:{en:"Scenes are timed to the narration so each phrase starts on its image; music and effects sit under the voice.", ru:"Сцены выстроены по озвучке: каждая фраза начинается на своём кадре; музыка и эффекты лежат под голосом."} },
-    { id:"marshrut0", year:2026, ar:1.778, fmt:"16:9 · 2:56",
+    { id:"marshrut0", yt:"paranorma", year:2026, ar:1.778, fmt:"16:9 · 2:56",
       title:{en:"Route 0", ru:"Маршрут 0"},
       type:{en:"Animated story", ru:"Анимационная история"},
       role:{en:"Animation, typography, sound, edit", ru:"Анимация, типографика, звук, монтаж"},
@@ -46,7 +46,7 @@ window.SITE = {
       line:{en:"A bare concrete apartment becomes a finished interior with a swipe of the hand, shot as one vertical walk-through.", ru:"Голый бетонный объект превращается в готовый интерьер взмахом руки: один вертикальный проход по квартире."},
       brief:{en:"Show a furniture and interior design project to the client before it is built, in a format made for social media.", ru:"Показать мебельный и дизайн-проект клиенту до реализации в формате для соцсетей."},
       solution:{en:"Matched hand-swipe transitions turn the real construction site into the rendered rooms, keeping the camera path continuous.", ru:"Переходы взмахом руки превращают реальную стройку в визуализацию комнат, траектория камеры остаётся непрерывной."} },
-    { id:"intro", year:2026, ar:1.778, fmt:"16:9 · 0:25",
+    { id:"intro", yt:"paranorma", year:2026, ar:1.778, fmt:"16:9 · 0:25",
       title:{en:"PARANORMA Channel Intro", ru:"PARANORMA · интро канала"},
       type:{en:"Motion identity", ru:"Моушн-айдентика"},
       role:{en:"Motion design, sound design", ru:"Моушн-дизайн, звук"},
@@ -54,7 +54,7 @@ window.SITE = {
       line:{en:"A 25-second signature entrance: logo reveal, smoke, glitch and designed sound.", ru:"25 секунд фирменного входа в канал: логотип, дым, глитч и авторский звук."},
       brief:{en:"Give a horror-animation channel a recognisable opening that works every episode.", ru:"Дать анимационному хоррор-каналу узнаваемое открытие, которое работает в каждом выпуске."},
       solution:{en:"A logo reveal built around slime-green light and smoke, with a matching sound hit.", ru:"Появление логотипа в зелёном свете и дыму с точным звуковым акцентом."} },
-    { id:"gonarforce_logo", year:2026, ar:1.778, fmt:"16:9 · 0:10",
+    { id:"gonarforce_logo", yt:"gonarforce", year:2026, ar:1.778, fmt:"16:9 · 0:10",
       title:{en:"GONAR FORCE Logo Intro", ru:"GONAR FORCE · лого-интро"},
       type:{en:"Motion identity", ru:"Моушн-айдентика"},
       role:{en:"Logo animation, sound", ru:"Анимация логотипа, звук"},
@@ -108,16 +108,6 @@ window.SITE = {
     { id:"n12", ch:"UNN",  dur:"0:13", title:{en:"Military aid package announced", ru:"Пакет военной помощи"} }
   ],
 
-  THUMBS: [
-    { f:"th_9effects", ar:1.778, alt:{en:"YouTube thumbnail: 9 After Effects effects in 2 minutes", ru:"Превью YouTube: 9 эффектов After Effects за 2 минуты"} },
-    { f:"th_archaeology", ar:1.778, alt:{en:"YouTube thumbnail: archaeological discoveries", ru:"Превью YouTube: археологические открытия"} },
-    { f:"th_firefly", ar:1.778, alt:{en:"YouTube thumbnail: Adobe Firefly AI", ru:"Превью YouTube: Adobe Firefly"} },
-    { f:"th_missing39", ar:1.778, alt:{en:"PARANORMA thumbnail: missing for 39 years", ru:"Превью PARANORMA: пропал 39 лет назад"} },
-    { f:"th_sd1", ar:1.869, alt:{en:"YouTube thumbnail: Stable Diffusion input and output", ru:"Превью YouTube: Stable Diffusion, вход и выход"} },
-    { f:"th_skater", ar:1.778, alt:{en:"YouTube thumbnail: skater with glass shards", ru:"Превью YouTube: скейтер с осколками"} },
-    { f:"thumb_alive", ar:1.792, alt:{en:"PARANORMA thumbnail: is it alive", ru:"Превью PARANORMA: оно живое?!"} }
-  ],
-
   EXP: [
     { t:{en:"News & social channels", ru:"Новостные и соцмедиа-каналы"}, d:{en:"Vertical news shorts built to channel templates, with voice-over and sound, delivered fast.", ru:"Вертикальные новостные ролики по шаблонам каналов, с озвучкой и звуком, быстрая сдача."} },
     { t:{en:"Advertising & creatives", ru:"Реклама и креативы"}, d:{en:"Square and vertical ad creatives, kinetic typography and product promos.", ru:"Квадратные и вертикальные рекламные креативы, кинетическая типографика и промо."} },
@@ -132,7 +122,13 @@ window.SITE = {
     { t:{en:"AI where it saves time", ru:"AI там, где он экономит время"}, d:{en:"Neural tools take on the heavy lifting; timing, taste and final sound stay in human hands.", ru:"Нейросети берут на себя рутину; ритм, вкус и финальный звук остаются за человеком."} },
     { t:{en:"Built to the brief", ru:"Строго по брифу"}, d:{en:"Templates, formats and brand rules are respected, and files arrive as agreed.", ru:"Шаблоны, форматы и правила бренда соблюдаются, файлы приходят как договорились."} }
   ],
-  TOOLS: ["After Effects","Premiere Pro","Photoshop","Blender","Remotion","ComfyUI / Stable Diffusion","ElevenLabs"],
+  TOOLGROUPS: [
+    { g:{en:"Editing & motion", ru:"Монтаж и моушн"}, i:["After Effects","Premiere Pro",{en:"Remotion (motion in code)",ru:"Remotion (моушн в коде)"}] },
+    { g:{en:"3D", ru:"3D"}, i:["Blender"] },
+    { g:{en:"Design", ru:"Дизайн"}, i:["Photoshop"] },
+    { g:{en:"AI", ru:"AI"}, i:["ComfyUI / Stable Diffusion",{en:"Whisper (subtitle timing)",ru:"Whisper (тайминг субтитров)"},{en:"Real-ESRGAN (upscaling)",ru:"Real-ESRGAN (апскейл)"}] },
+    { g:{en:"Sound & delivery", ru:"Звук и выдача"}, i:[{en:"ElevenLabs (voice, effects)",ru:"ElevenLabs (голос, эффекты)"},{en:"Sound design & mix",ru:"Звуковой дизайн и сведение"},"FFmpeg"] }
+  ],
   MARQUEE: {en:["Editing","Motion graphics","Titles & subtitles","Colour & retouch","AI video","Thumbnails","Upscaling","News & social shorts","Channel production"],
             ru:["Монтаж","Моушн-графика","Титры и субтитры","Цвет и ретушь","AI-видео","Превью","Апскейл","Новостные шорты","Продакшн каналов"]},
 
@@ -145,7 +141,7 @@ window.SITE = {
     { t:{en:"YouTube thumbnails and covers", ru:"Превью и обложки YouTube"}, d:{en:"Clear, high-contrast covers designed to be clicked.", ru:"Чёткие контрастные обложки, на которые хочется нажать."} },
     { t:{en:"Remastering and upscaling", ru:"Ремастеринг и апскейл"}, d:{en:"Cleaner, sharper, smoother footage from weak sources.", ru:"Более чистая, резкая и плавная картинка из слабых исходников."} },
     { t:{en:"News and social-media shorts", ru:"Новостные ролики для соцсетей"}, d:{en:"Vertical TikTok and Shorts to a channel template, fast turnaround.", ru:"Вертикальные TikTok и Shorts по шаблону канала, быстрая сдача."} },
-    { t:{en:"Whole-channel production", ru:"Продакшн целых каналов"}, d:{en:"Story, voice, animation, edit and thumbnails, as run on PARANORMA and GONAR FORCE.", ru:"Сюжет, озвучка, анимация, монтаж и превью целиком, как на PARANORMA и GONAR FORCE."} }
+    { t:{en:"Whole-channel production", ru:"Продакшн целых каналов"}, d:{en:"Story, voice, animation, edit and thumbnails for YouTube channels.", ru:"Сюжет, озвучка, анимация, монтаж и превью для YouTube-каналов."} }
   ],
 
   PROCESS: [
@@ -158,7 +154,7 @@ window.SITE = {
 
   I18N: {
     en: {
-      meta_title:"GONAR — Video editor & motion designer",
+      meta_title:"GONAR — Video editor & motion designer", nav_all:"All work", nav_design:"Design", archive_h:"All work", archive_s:"The full archive of video projects: animation, motion, editing, 3D, AI and ads. Hover to preview, click to play.", gallery_h:"Design & thumbnails", gallery_s:"Thumbnails, banners, logos, artwork and product cards. Click an image to enlarge.", st_video:"video projects", st_design:"design works", watch_yt:"Watch on YouTube", prev:"Previous", nxt:"Next",
       meta_desc:"Video editor and motion designer. Cinematic storytelling, motion graphics, news and social shorts, AI-assisted pipelines. Available for freelance projects.",
       nav_work:"Work", nav_shorts:"Shorts", nav_services:"Services", nav_about:"About", nav_contact:"Contact",
       hero_role:"Video editor & motion designer",
@@ -168,20 +164,17 @@ window.SITE = {
       work_h:"Selected work", work_s:"Eleven projects across animation, motion, 3D and interiors. Hover to preview, click to open.",
       drag:"Scroll", role:"Role", tools:"Tools", format:"Format", year:"Year", brief:"Challenge", solution:"Approach", next:"Next project",
       shorts_h:"News & social shorts", shorts_s:"Vertical 9:16 edits for news channels UNN and TEZA: headline template, data call-outs, voice-over and sound, each under 30 seconds.",
-      thumbs_h:"Thumbnails and covers", thumbs_s:"Designed for the YouTube feed: one idea, one face or object, readable at 120 px wide.",
       services_h:"What I do", process_h:"How we work", process_s:"Five steps, one point of contact.",
-      tools_h:"Tools I use daily", channels_h:"Own channels", channels_s:"Two YouTube projects I run end to end.",
-      ch_p:"Animated mystery stories: script, voice, animation, sound and thumbnails.", ch_g:"Reviews and design: thumbnails, artwork and editing lessons.",
-      visit:"Open channel",
+      tools_h:"Tools I work with",
       about_h:"About", about_1:"Seven years in design: video editing, motion and creative production for channels, studios and brands.",
-      about_2:"I have worked with design studios and teams on very different subjects, from news channels to interior design. I freelance on Freelancehunt and run two YouTube channels, PARANORMA and GONAR FORCE, where I do everything from the script to the thumbnail. I use AI tools where they save time and keep timing, taste and sound by hand.",
-      st_proj:"selected projects", st_news:"news shorts", st_ch:"own YouTube channels", st_lang:"working languages",
+      about_2:"Over seven years I have worked with many design studios and teams on very different subjects, from news and social channels to interiors and e-commerce. I edit and animate in After Effects and Premiere Pro, retouch in Photoshop and build 3D in Blender. Where it saves time I add an AI stack: Stable Diffusion and ComfyUI, ElevenLabs for voice and Remotion for motion in code. Timing, taste and the final sound stay by hand.",
+      st_proj:"selected projects", st_news:"news shorts",
       contact_h:"Let’s make something worth watching.", contact_s:"The fastest way to reach me is Telegram.",
-      email_copy:"Copy email", email_done:"Copied", fl:"Freelancehunt profile", yt1:"PARANORMA on YouTube", yt2:"GONAR FORCE on YouTube",
+      email_copy:"Copy email", email_done:"Copied", fl:"Freelancehunt profile",
       footer:"© 2026 GONAR. Video editor & motion designer.", top:"Back to top"
     },
     ru: {
-      meta_title:"GONAR — видеомонтажёр и моушн-дизайнер",
+      meta_title:"GONAR — видеомонтажёр и моушн-дизайнер", nav_all:"Все работы", nav_design:"Дизайн", archive_h:"Все работы", archive_s:"Полный архив видеопроектов: анимация, моушн, монтаж, 3D, AI и реклама. Наведите для превью, нажмите, чтобы смотреть.", gallery_h:"Дизайн и превью", gallery_s:"Превью, шапки, логотипы, арты и карточки товаров. Нажмите на изображение, чтобы увеличить.", st_video:"видеопроектов", st_design:"дизайн-работ", watch_yt:"Смотреть на YouTube", prev:"Назад", nxt:"Дальше",
       meta_desc:"Видеомонтажёр и моушн-дизайнер. Кинематографичный монтаж, моушн-графика, новостные и соцмедиа-ролики, AI-пайплайны. Беру проекты на фрилансе.",
       nav_work:"Работы", nav_shorts:"Шорты", nav_services:"Услуги", nav_about:"Обо мне", nav_contact:"Контакты",
       hero_role:"Видеомонтажёр и моушн-дизайнер",
@@ -191,16 +184,13 @@ window.SITE = {
       work_h:"Избранные работы", work_s:"Одиннадцать проектов: анимация, моушн, 3D и интерьер. Наведите, чтобы увидеть превью, нажмите, чтобы открыть.",
       drag:"Листайте", role:"Роль", tools:"Инструменты", format:"Формат", year:"Год", brief:"Задача", solution:"Решение", next:"Следующий проект",
       shorts_h:"Новости и соцсети", shorts_s:"Вертикальные 9:16 ролики для новостных каналов UNN и TEZA: шаблон заголовка, цифры, закадровый голос и звук, каждый до 30 секунд.",
-      thumbs_h:"Превью и обложки", thumbs_s:"Для ленты YouTube: одна идея, один образ, читается при ширине 120 px.",
       services_h:"Что я делаю", process_h:"Как мы работаем", process_s:"Пять шагов, один контакт.",
-      tools_h:"Инструменты, которыми работаю", channels_h:"Собственные каналы", channels_s:"Два YouTube-проекта, которые я веду от начала до конца.",
-      ch_p:"Анимационные мистические истории: сценарий, озвучка, анимация, звук и превью.", ch_g:"Обзоры и дизайн: превью, арты и уроки по монтажу.",
-      visit:"Открыть канал",
+      tools_h:"С чем я работаю",
       about_h:"Обо мне", about_1:"Семь лет в дизайне: видеомонтаж, моушн и креативный продакшн для каналов, студий и брендов.",
-      about_2:"Работал в дизайнерских студиях и командах над очень разными тематиками: от новостных каналов до интерьера. Сейчас фрилансю на Freelancehunt и веду два YouTube-канала, PARANORMA и GONAR FORCE, где делаю всё от сценария до превью. Использую нейросети там, где они экономят время, а ритм, вкус и звук держу в своих руках.",
-      st_proj:"избранных проектов", st_news:"новостных роликов", st_ch:"собственных YouTube-канала", st_lang:"рабочих языка",
+      about_2:"За семь лет поработал со многими дизайнерскими студиями и командами над очень разными тематиками: от новостных и соцмедиа-каналов до интерьеров и e-commerce. Монтирую и анимирую в After Effects и Premiere Pro, ретуширую в Photoshop, делаю 3D в Blender. Там, где это экономит время, подключаю AI-стек: Stable Diffusion и ComfyUI, ElevenLabs для озвучки и Remotion для моушна в коде. Ритм, вкус и финальный звук остаются за мной.",
+      st_proj:"избранных проектов", st_news:"новостных роликов",
       contact_h:"Давайте сделаем то, что хочется смотреть.", contact_s:"Быстрее всего ответ в Telegram.",
-      email_copy:"Скопировать email", email_done:"Скопировано", fl:"Профиль на Freelancehunt", yt1:"PARANORMA на YouTube", yt2:"GONAR FORCE на YouTube",
+      email_copy:"Скопировать email", email_done:"Скопировано", fl:"Профиль на Freelancehunt",
       footer:"© 2026 GONAR. Видеомонтажёр и моушн-дизайнер.", top:"Наверх"
     }
   }
