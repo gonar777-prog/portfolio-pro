@@ -336,3 +336,18 @@ html[lang=ru] .contact__h{font-size:clamp(38px,6.6vw,120px);max-width:15ch}
 .lb__n[hidden]{display:none}
 .lb__n--p{left:var(--gut)}.lb__n--n{right:var(--gut)}
 @media (max-width:899px){.lb__n{top:auto;bottom:16px;transform:none;width:44px;height:44px;font-size:24px}.lb__n--p{left:calc(50% - 56px)}.lb__n--n{right:calc(50% - 56px)}}
+
+/* hero business card — "Портфолио Sylar TG" */
+.hero__card{position:absolute;right:var(--gut);top:50%;transform:translateY(-54%);height:min(60svh,640px);aspect-ratio:9/16;z-index:2;margin:0}
+.hero__card video{width:100%;height:100%;object-fit:cover;border-radius:14px;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px var(--line)}
+.hero__card-snd{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;white-space:nowrap;font:500 13px var(--sans);color:var(--ink);background:var(--paper);padding:9px 15px;border-radius:999px;transition:background .25s,color .25s}
+.hero__card-snd:hover,.hero__card-snd.is-on{background:var(--acc);color:var(--ink)}
+.hero__card-snd .play{width:0;height:0;border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent currentColor}
+.hero__card figcaption{position:absolute;left:0;right:0;top:100%;margin-top:10px;display:flex;flex-direction:column;gap:2px}
+.hero__card figcaption b{font:400 20px/1.1 var(--serif);color:var(--paper)}
+.hero__card-cap{font:400 12px var(--sans);color:var(--mute)}
+@media (min-width:900px){.hero__line{max-width:min(15ch,calc(100% - 34svh))}}
+@media (max-width:899px){
+  .hero{height:auto;min-height:100svh}
+  .hero__card{position:relative;right:auto;top:auto;transform:none;height:auto;width:min(62vw,300px);margin:26px 0 70px}
+}

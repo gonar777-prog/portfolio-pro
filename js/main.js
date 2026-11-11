@@ -222,8 +222,22 @@ $('#reelBtn').addEventListener('click', () => {
   rv.preload = 'auto'; rv.currentTime = 0; rv.muted = false; rv.play().catch(() => {}); $('#reelX').focus();
   if (!reduced) gsap.fromTo(reelEl, { opacity: 0 }, { opacity: 1, duration: .5 });
 });
-function closeReel() { rv.pause(); reelEl.hidden = true; document.body.style.overflow = current ? 'hidden' : ''; if (!current && lenis) lenis.start(); hv.play().catch(() => {}); }
+function closeReel() { rv.pause(); reelEl.hidden = true; const v2 = $('#vkVideo'); if (v2) v2.play().catch(() => {}); document.body.style.overflow = current ? 'hidden' : ''; if (!current && lenis) lenis.start(); hv.play().catch(() => {}); }
 $('#reelX').addEventListener('click', closeReel);
+
+/* ---------- hero business card (Portfolio Sylar TG) ---------- */
+const vk = $('#vkVideo'), vkB = $('#vkSnd'), vkT = $('#vkSndT');
+if (vk) {
+  const setVk = () => { const on = !vk.muted; vkB.classList.toggle('is-on', on); vkB.setAttribute('aria-pressed', on); vkT.dataset.i18n = on ? 'vk_off' : 'vk_on'; vkT.textContent = T(vkT.dataset.i18n); };
+  const mute = () => { vk.muted = true; vk.loop = true; setVk(); };
+  vkB.addEventListener('click', () => {
+    if (vk.muted) { vk.currentTime = 0; vk.muted = false; vk.loop = false; vk.play().catch(() => mute()); } else { mute(); vk.play().catch(() => {}); }
+    setVk();
+  });
+  vk.addEventListener('ended', () => { mute(); vk.currentTime = 0; vk.play().catch(() => {}); });
+  $('#reelBtn').addEventListener('click', () => { if (!vk.muted) mute(); vk.pause(); });
+  new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { if (reelEl.hidden) vk.play().catch(() => {}); } else { if (!vk.muted) mute(); vk.pause(); } }), { threshold: .15 }).observe(vk);
+}
 
 /* ---------- hero timecode ---------- */
 const tc = $('#tc'), pad = n => String(n).padStart(2, '0');
