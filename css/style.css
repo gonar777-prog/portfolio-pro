@@ -535,3 +535,7 @@ a.fact:hover{border-color:var(--acc);transform:translateY(-2px)}
 .hire__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
 @media (max-width:900px){.hire__grid{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.hire__grid{grid-template-columns:1fr}.hire__cta .btn{width:100%;justify-content:center}}
+
+/* reviews: show more */
+.revs:not(.is-open) .rev--more{display:none}
+.rev__more{margin-top:8px}

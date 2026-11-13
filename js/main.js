@@ -61,7 +61,11 @@ function renderLists() {
       <ul>${L(p.i).map(x => `<li>${x}</li>`).join('')}</ul>
       <a class="btn ${p.hot ? 'btn--solid' : ''}" href="${S.links.tg}" target="_blank" rel="noopener">${T('order')}</a></li>`).join('');
   $('#termsList').innerHTML = S.TERMS.map(x => `<li><b>${L(x.n)}</b><span>${L(x.t)}</span></li>`).join('');
-  $('#revGrid').innerHTML = S.REVIEWS.map(r => `<li class="rev"><span class="stars" aria-label="5 of 5">★★★★★</span><blockquote>«${L(r.q)}»</blockquote><p class="rev__tag">${L(r.tag)} · Freelancehunt</p></li>`).join('');
+  $('#revGrid').innerHTML = S.REVIEWS.map((r, n) => `<li class="rev${n > 5 ? ' rev--more' : ''}"><span class="stars" aria-label="5 of 5">★★★★★</span><blockquote>«${L(r.q)}»</blockquote><p class="rev__tag">${L(r.tag)} · Freelancehunt</p></li>`).join('');
+  { const g = $('#revGrid'), b = $('#revMore') || Object.assign(document.createElement('button'), { id: 'revMore', type: 'button', className: 'btn mag rev__more' });
+    if (!b.parentNode) g.after(b); const open = g.classList.contains('is-open');
+    b.textContent = open ? (lang === 'ru' ? 'Свернуть' : 'Show less') : (lang === 'ru' ? `Показать все отзывы (${S.REVIEWS.length})` : `Show all reviews (${S.REVIEWS.length})`);
+    b.onclick = () => { g.classList.toggle('is-open'); b.textContent = g.classList.contains('is-open') ? (lang === 'ru' ? 'Свернуть' : 'Show less') : (lang === 'ru' ? `Показать все отзывы (${S.REVIEWS.length})` : `Show all reviews (${S.REVIEWS.length})`); if (window.ScrollTrigger) ScrollTrigger.refresh(); }; }
   $('#faqList').innerHTML = S.FAQ.map((f, i) => `<details class="qa"${i === 0 ? ' open' : ''}><summary>${L(f.q)}</summary><p>${L(f.a)}</p></details>`).join('');
   renderArchive(); renderGallery();
   const m = S.MARQUEE[lang].map(x => `<span>${x}</span>`).join('');

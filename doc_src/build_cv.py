@@ -2,6 +2,7 @@
 Run:  python3 doc_src/build_cv.py        -> assets/docs/GONAR_Portfolio_{RU,EN}.pdf
 Needs: pip install segno ; node with playwright (Chromium).  Texts are in T below."""
 import os, html, subprocess, segno
+from reviews_data import R as REVIEWS
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -242,24 +243,34 @@ h3{font-weight:600;font-size:12pt;letter-spacing:.04em;margin-bottom:3mm}
 .news a{display:block;aspect-ratio:9/16;overflow:hidden;border:1px solid var(--line)}
 .news img{width:100%;height:100%;object-fit:cover;display:block}
 /* reviews + end */
-.rv{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
-.rv div{background:var(--ink2);border:1px solid var(--line);padding:5mm;position:relative}
-.rv .st{color:var(--amb);letter-spacing:1mm;font-size:9pt}
-.rv q{display:block;font-size:9.3pt;line-height:1.45;color:#dfe4e8;margin:2.5mm 0 3mm;quotes:'“' '”'}
-.rv span{font:500 6.8pt/1 'IBM Plex Mono',monospace;color:var(--mut);letter-spacing:.12em;text-transform:uppercase}
-.end{margin-top:9mm;padding:8mm;background:var(--ink2);border:1px solid var(--line);display:grid;grid-template-columns:1fr auto auto;gap:7mm;align-items:end}
-.end h2{font-size:26pt;margin-bottom:3mm}
-.end .tg{font:600 24pt/1 Oswald;color:var(--acc);display:block;margin:4mm 0 4mm}
-.end ul{list-style:none;font-size:9pt}
-.end li{padding:1.2mm 0;color:#cfd5db}
-.end li span{display:inline-block;width:27mm;font:500 6.6pt/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--amb)}
-.end .qr img{width:32mm;height:32mm}
+.rhd{display:flex;justify-content:space-between;align-items:flex-end;gap:8mm;margin-bottom:5mm}
+.rate{text-align:right;border-left:1px solid var(--line);padding-left:6mm}
+.rate b{display:block;font:600 34pt/1 Oswald;color:var(--paper)}
+.rate b em{font-style:normal;color:var(--amb);font-size:20pt;margin-left:1mm}
+.rate span{font:500 6.8pt/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.rv{columns:3;column-gap:3.5mm}
+.rv div{break-inside:avoid;background:var(--ink2);border:1px solid var(--line);border-left:2px solid var(--acc);padding:3mm 3.6mm;margin-bottom:3mm}
+.rv .st{color:var(--amb);letter-spacing:.8mm;font-size:7.5pt}
+.rv q{display:block;font-size:7.9pt;line-height:1.38;color:#dfe4e8;margin:1.8mm 0 2.2mm;quotes:'“' '”'}
+.rv span{font:500 6.2pt/1.3 'IBM Plex Mono',monospace;color:var(--mut);letter-spacing:.12em;text-transform:uppercase}
+.fin .hbg{height:297mm;opacity:.35;background-position:center}
+.fin .hbg:after{background:linear-gradient(180deg,rgba(20,22,27,.5),rgba(20,22,27,.75) 45%,var(--ink) 85%)}
+.fin>*:not(.hbg){position:relative}
+.fin__in{margin-top:auto;margin-bottom:10mm}
+.fin__h{font-size:58pt;line-height:.95;max-width:170mm;margin:2mm 0 5mm}
+.fin .lede{font-size:11pt;color:#cfd5db;max-width:140mm}
+.fin .tg{font:700 46pt/1 Oswald;color:var(--acc);display:block;margin:8mm 0 9mm}
+.fin__row{display:grid;grid-template-columns:1fr auto auto;gap:8mm;align-items:end;padding-top:7mm;border-top:1px solid var(--line)}
+.fin ul{list-style:none;font-size:10pt}
+.fin li{padding:1.6mm 0;color:#cfd5db}
+.fin li span{display:inline-block;width:30mm;font:500 6.8pt/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--amb)}
+.fin .qr img{width:34mm;height:34mm}
 """
 
 
 def page(cls, t, n, label, body):
     return f'''<section class="page {cls}">
-<div class="top"><b><img src="../media/img/GONAR_mark.svg" alt="">GONAR</b><span>{e(label)} · {n}/6</span></div>
+<div class="top"><b><img src="../media/img/GONAR_mark.svg" alt="">GONAR</b><span>{e(label)} · {n}/7</span></div>
 {body}
 <div class="foot"><span>GONAR · {e(t['role'])}</span><span>gonar777-prog.github.io/portfolio-pro</span></div>
 </section>'''
@@ -291,7 +302,7 @@ def build(L):
 <div class="qr"><img src="{qr(SITE)}" alt=""><b>{e(t['reel'])}</b><span>{e(t['reel_s'])}</span></div></div>
 <div class="facts">{facts}</div>
 <div class="contacts"><div><span>{t['c_tg']}</span><a href="{TG}">@aid99999</a></div><div><span>{t['c_mail']}</span><a href="mailto:{MAIL}">{MAIL}</a></div><div><span>{t['c_site']}</span><a href="{SITE}">gonar777-prog.github.io/portfolio-pro</a></div><div><span>{t['c_fh']}</span><a href="{FH}">freelancehunt.com/freelancer/gonar</a></div></div>
-<div class="foot"><span>GONAR · 2026</span><span>1/6</span></div>
+<div class="foot"><span>GONAR · 2026</span><span>1/7</span></div>
 </section>'''
     xp = ''.join(f'<div class="xc"><div class="hd"><h3>{e(h)}</h3><span>{e(y)}</span></div><ul>{"".join(f"<li>{e(i)}</li>" for i in items)}</ul></div>' for h, y, items in t['x'])
     langs = ''.join(f'<div class="lang">{e(a)}<span>{e(b)}</span></div>' for a, b in t['langs'])
@@ -317,15 +328,21 @@ def build(L):
     news = ''.join(f'<a href="{SITE}#shorts"><img src="{im(n + '.webp', 260)}" alt=""></a>' for n in NEWS)
     w2 = page('', t, 5, t['w_h'], f'''<div class="wk">{''.join(work(t, w) for w in W[4:8])}</div>
 <div class="news"><div class="h"><h3>{e(t['news_h'])}</h3><p>{e(t['news_s'])}</p></div>{news}</div>''')
-    rv = ''.join(f'<div><span class="st">★★★★★</span><q>{e(q)}</q><span>{e(tag)}</span></div>' for tag, q in t['reviews'])
-    end = page('', t, 6, t['r_h'], f'''<div class="eb">{e(t['r_eb'])}</div><h2>{e(t['r_h'])}</h2><p class="mut" style="margin:-3mm 0 5mm;font-size:9pt">{e(t['r_s'])} <a class="acc" href="{FH}">Freelancehunt →</a></p>
-<div class="rv">{rv}</div>
-<div class="end"><div><h2>{e(t['end_h'])}</h2><p class="mut" style="font-size:9pt">{e(t['end_s'])}</p><a class="tg" href="{TG}">@aid99999</a>
-<ul><li><span>{t['c_mail']}</span><a href="mailto:{MAIL}">{MAIL}</a></li><li><span>{t['c_site']}</span><a href="{SITE}">gonar777-prog.github.io/portfolio-pro</a></li><li><span>{t['c_fh']}</span><a href="{FH}">freelancehunt.com/freelancer/gonar</a></li></ul></div>
+    revs = [(tr, qo) if L == 'ru' else (te, qe) for tr, te, qo, qe in REVIEWS]
+    rv = ''.join(f'<div><span class="st">★★★★★</span><q>{e(q)}</q><span>{e(tag)}</span></div>' for tag, q in revs)
+    rate = (f'<div class="rate"><b>5.0<em>★</em></b><span>{len(revs)} ' + ('отзывов · все 5.0<br>Freelancehunt' if L == 'ru' else 'reviews · all 5.0<br>Freelancehunt') + '</span></div>')
+    reviews = page('', t, 6, t['r_h'], f'''<div class="rhd"><div><div class="eb">{e(t['r_eb'])}</div><h2>{e(t['r_h'])}</h2><p class="mut" style="margin:-3mm 0 0;font-size:9pt">{e(t['r_s'])} <a class="acc" href="{FH}">Freelancehunt →</a></p></div>{rate}</div>
+<div class="rv">{rv}</div>''')
+    end = f'''<section class="page fin"><div class="hbg" style="background-image:url({im('GONAR_intro.webp', 1400)})"></div>
+<div class="top"><b><img src="../media/img/GONAR_mark.svg" alt="">GONAR</b><span>{e(t['q_tg'])} · 7/7</span></div>
+<div class="fin__in"><div class="eb">05 · {e(t['open'])}</div><h2 class="fin__h">{e(t['end_h'])}</h2><p class="lede">{e(t['end_s'])}</p>
+<a class="tg" href="{TG}">@aid99999</a>
+<div class="fin__row"><ul><li><span>{t['c_tg']}</span><a href="{TG}">t.me/aid99999</a></li><li><span>{t['c_mail']}</span><a href="mailto:{MAIL}">{MAIL}</a></li><li><span>{t['c_site']}</span><a href="{SITE}">gonar777-prog.github.io/portfolio-pro</a></li><li><span>{t['c_fh']}</span><a href="{FH}">freelancehunt.com/freelancer/gonar</a></li></ul>
 <div class="qr"><img src="{qr(SITE)}" alt=""><span>{e(t['q_site'])}</span></div>
-<div class="qr"><img src="{qr(TG)}" alt=""><span>{e(t['q_tg'])}</span></div></div>''')
+<div class="qr"><img src="{qr(TG)}" alt=""><span>{e(t['q_tg'])}</span></div></div></div>
+<div class="foot"><span>GONAR · {e(t['role'])}</span><span>2026</span></div></section>'''
     doc = f'''<!doctype html><html lang="{t['lang']}"><head><meta charset="utf-8"><title>GONAR — {e(t['doc'])}</title><style>{CSS}</style></head>
-<body>{cover}{prof}{skills}{w1}{w2}{end}</body></html>'''
+<body>{cover}{prof}{skills}{w1}{w2}{reviews}{end}</body></html>'''
     path = os.path.join(HERE, f'cv_{L}.html')
     open(path, 'w', encoding='utf-8').write(doc)
     return path
