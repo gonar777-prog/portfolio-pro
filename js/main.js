@@ -321,6 +321,6 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) { hv.
 $('#stVideo').dataset.count = $('#stVideo2').dataset.count = S.CASES.length + S.NEWS.length + window.ARCH.length; $('#stDesign').dataset.count = window.GALLERY.length;
 applyLang(); setupScroll(); intro();
 const m = location.hash.match(/^#\/work\/(.+)$/); if (m && byId(m[1])) setTimeout(() => openCase(m[1], null, true), 300);
-const mv = location.hash.match(/^#\/video\/(.+)$/); if (mv) { const it = window.ARCH.find(x => x.id === mv[1]); if (it) setTimeout(() => { $('#archive').scrollIntoView(); openLb('v', it); }, 500); }
+const mv = location.hash.match(/^#\/video\/(.+)$/); if (mv && byId(mv[1])) setTimeout(() => openCase(mv[1], null, true), 300); else if (mv) { const it = window.ARCH.find(x => x.id === mv[1]); if (it) setTimeout(() => { $('#archive').scrollIntoView(); openLb('v', it); }, 500); }
 if (reduced) hv.removeAttribute('autoplay');
 })();
