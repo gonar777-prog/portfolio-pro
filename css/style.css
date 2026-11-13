@@ -521,3 +521,17 @@ a.fact:hover{border-color:var(--acc);transform:translateY(-2px)}
   .hero__shade{background:linear-gradient(180deg,rgba(20,22,27,.8),rgba(20,22,27,.6) 50%,var(--ink) 100%)}
 }
 @media (max-width:520px){.hero__cta .btn--ghost{display:inline-flex}.hero__cta .btn{width:100%;justify-content:center}}
+
+/* ---------- HIRE (for employers) ---------- */
+.hire{background:#181b21;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)}
+.hire__s{max-width:760px;margin-top:14px;color:#c4cbd2}
+.hire__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.hire__c{background:#1f232a;border:1px solid rgba(255,255,255,.08);padding:22px 22px 24px;position:relative;overflow:hidden}
+.hire__c:before{content:'';position:absolute;left:0;top:0;width:100%;height:2px;background:var(--acc);transform:scaleX(.18);transform-origin:left;transition:transform .5s}
+.hire__c:hover:before{transform:scaleX(1)}
+.hire__c .mono{display:block;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--amb)}
+.hire__c b{display:block;font:600 clamp(28px,3.2vw,44px)/1.05 var(--disp);text-transform:uppercase;margin:16px 0 10px;color:var(--paper)}
+.hire__c p{font-size:14px;color:#aab3bc;line-height:1.5}
+.hire__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+@media (max-width:900px){.hire__grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.hire__grid{grid-template-columns:1fr}.hire__cta .btn{width:100%;justify-content:center}}
