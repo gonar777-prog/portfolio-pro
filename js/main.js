@@ -317,6 +317,12 @@ $('#copyMail').addEventListener('click', async e => {
 });
 document.addEventListener('visibilitychange', () => { if (document.hidden) { hv.pause(); } else if (reelEl.hidden) hv.play().catch(() => {}); });
 
+/* mobile menu */
+{ const nav = $('#nav'), bt = $('#navBurger');
+  if (bt) { const set = (o) => { nav.classList.toggle('is-open', o); bt.setAttribute('aria-expanded', o); };
+    bt.addEventListener('click', () => set(!nav.classList.contains('is-open')));
+    $$('#navLinks a').forEach(x => x.addEventListener('click', () => set(false)));
+    addEventListener('keydown', e => { if (e.key === 'Escape') set(false); }); } }
 /* boot */
 $('#stVideo').dataset.count = $('#stVideo2').dataset.count = S.CASES.length + S.NEWS.length + window.ARCH.length; $('#stDesign').dataset.count = window.GALLERY.length;
 applyLang(); setupScroll(); intro();

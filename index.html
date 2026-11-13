@@ -39,18 +39,20 @@
 
 <header class="nav" id="nav">
   <a class="nav__logo" href="#top" aria-label="GONAR, top of page"><svg class="nav__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#gmark"/></svg><span>GONAR</span></a>
-  <nav class="nav__links" aria-label="Primary">
+  <nav class="nav__links" id="navLinks" aria-label="Primary">
     <a href="#work" data-i18n="nav_work">Work</a>
     <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
     <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
     <a href="#archive" data-i18n="nav_all">All work</a>
     <a href="#hire" data-i18n="nav_hire">Hire me</a>
     <a href="#about" data-i18n="nav_about">About</a>
+    <a class="nav__mcta" href="https://t.me/aid99999" target="_blank" rel="noopener" data-i18n="cta_order">Order a video</a>
   </nav>
   <a class="nav__cta" href="https://t.me/aid99999" target="_blank" rel="noopener" data-i18n="cta_order">Order a video</a>
   <div class="lang" role="group" aria-label="Language">
     <button type="button" data-lang="en" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="ru" aria-pressed="false">RU</button>
   </div>
+  <button type="button" class="nav__burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><i></i><i></i><i></i></button>
 </header>
 
 <main id="top">

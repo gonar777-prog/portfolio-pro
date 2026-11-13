@@ -539,3 +539,30 @@ a.fact:hover{border-color:var(--acc);transform:translateY(-2px)}
 /* reviews: show more */
 .revs:not(.is-open) .rev--more{display:none}
 .rev__more{margin-top:8px}
+
+/* ---------- mobile: burger menu + works as a grid (everything visible) ---------- */
+.nav__burger,.nav__mcta{display:none}
+@media (max-width:899px){
+  .nav__cta{display:none}
+  .nav__burger{display:grid;gap:5px;place-content:center;width:42px;height:42px;margin-left:6px;border:1px solid var(--line);background:transparent;cursor:pointer}
+  .nav__burger i{display:block;width:18px;height:1.5px;background:var(--paper);transition:transform .3s,opacity .3s}
+  .nav.is-open .nav__burger i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  .nav.is-open .nav__burger i:nth-child(2){opacity:0}
+  .nav.is-open .nav__burger i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  .lang{margin-left:auto}
+  .nav .nav__links{display:flex;flex-direction:column;gap:0;position:fixed;left:0;right:0;top:71px;background:#14161b;border-bottom:1px solid var(--line);padding:6px var(--gut) 18px;
+    transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;font-size:15px}
+  .nav.is-open .nav__links{opacity:1;visibility:visible;transform:none}
+  .nav .nav__links a{padding:15px 0;border-bottom:1px solid var(--line)}
+  .nav .nav__links a::after{display:none}
+  .nav .nav__links .nav__mcta{display:block;margin-top:14px;border:1px solid var(--acc);color:var(--acc);text-align:center;padding:15px 0}
+
+  .work__viewport{overflow:visible;padding-inline:var(--gut)}
+  .work__track{display:grid;grid-template-columns:1fr 1fr;gap:22px 12px;width:auto;padding-right:0;transform:none!important}
+  .work__track .card{width:auto!important;--h:auto}
+  .work__track .card__m{height:auto;aspect-ratio:4/5}
+  .work__track .card__t{margin-top:10px;flex-direction:column;gap:6px}
+  .work__track .card__t h3{font-size:15px;line-height:1.2}
+  .work__track .card__r{font-size:12.5px;line-height:1.4}
+  .work__hint{display:none}
+}
