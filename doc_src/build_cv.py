@@ -50,7 +50,7 @@ T = {
   p_big='Один специалист на всю цепочку: от идеи и раскадровки до монтажа, моушна, звука и сдачи файлов.',
   p_txt='За 7+ лет я работал в четырёх компаниях. Три года — в AI-видео: замена лица (deepfake), липсинк и AI-озвучка. Остальное время — моушн-дизайн и монтаж для новостных и соцмедиа-каналов, рекламы, YouTube и интерьерных студий. Работаю по брендбукам и шаблонам, сдаю в срок, проекты и исходники держу в порядке.',
   dir_h='Направления', dirs=[('Новости и соцсети', 'u4.webp'), ('Реклама и промо', 'telefon.webp'), ('YouTube и обложки', '@th_missing39.webp'), ('Интерьеры и рилсы', 'remont1.webp'), ('3D и окружения', 'volcano.webp'), ('Анимация и AI', 'chaos.webp')],
-  g_h='Дизайн и обложки', g_s='Превью для YouTube: крупная идея, читаемый текст, эмоция — чтобы хотелось нажать.',
+  g_h='Обложки GONAR FORCE', g_s='Превью для моего YouTube-канала GONAR FORCE: крупная идея, читаемый текст, эмоция.',
   x_h='Опыт', x=[
     ('Моушн-дизайн и монтаж', '4+ года', ['Вертикальные новостные ролики по шаблонам каналов: титры, инфографика, озвучка, звук — быстрая сдача.', 'Рекламные креативы, кинетическая типографика и промо, моушн-брендинг и логотипы.', 'YouTube-каналы под ключ, обложки, анимационные истории, рилсы для интерьерных студий.']),
     ('AI-видео', '3 года', ['Замена лица (deepfake) и липсинк: подготовка исходников, генерация, доводка кадров.', 'AI-озвучка и синтез голоса, сведение с музыкой и эффектами.', 'Встраивание AI-кадров в монтаж так, чтобы результат выглядел цельно.'])],
@@ -70,12 +70,12 @@ T = {
   q_site='Сайт-портфолио', q_tg='Telegram',
   works=[
     ('sylar', 'Portfolio_Sylar_TG.webp', True, 'Портфолио Sylar TG', '9:16 · 0:20', 'Идея, моушн, 3D, титры, звук', 'Моушн-визитка, которую видно сразу: 20 секунд под трек.', '3D-космос, голограммные титры и переходы точно в бит музыки.'),
-    ('intro', 'GONAR_intro.webp', False, 'Заставка GONAR', '16:9 · 0:20 · петля', 'Идея, 3D, моушн', 'Зацикленная заставка для сайта, в которой видно все работы.', 'Камера облетает плёнку с моими роликами; голограммный глитч и печать в стиле DOS.'),
-    ('soobshenie', 'soobshenie.webp', False, 'Сообщение от меня', '16:9 · 2:39', 'Сюжет, анимация, озвучка, звук, монтаж', 'Удержать внимание почти три минуты простой плоской графикой.', 'Ритм по репликам, субтитры точно по звуку, напряжение держит звуковой дизайн.'),
-    ('marshrut0', 'marshrut0.webp', False, 'Маршрут 0', '16:9 · 2:56', 'Анимация, типографика, звук, монтаж', 'Тихая тревожная история, читаемая с первого взгляда.', 'Сильные одно-кадровые сцены, читаемые титры, сдержанный звук.'),
+    ('mebel', 'mebel.webp', True, 'Мебель и квартира', '9:16 · 0:52', 'Монтаж, композитинг, переходы', 'Показать заказчику будущий интерьер прямо на стройке, в формате для соцсетей.', 'Жест рукой — и голые стены превращаются в готовую комнату с мебелью.'),
+    ('gf_intro', 'A:gf_intro.jpg', False, 'GONAR FORCE · заставка', '16:9 · 0:41', 'Моушн, 3D-титры, монтаж, звук', 'Заставка для моего YouTube-канала GONAR FORCE.', 'Кадры с цветными линзами, 3D-титры и огненные вспышки в одном ритме.'),
+    ('matrica', 'A:matrica.jpg', False, 'Матрица · промо AI', '16:9 · 1:1 · 9:16', 'Монтаж, эффекты, звук', 'Рекламный ролик AI-ассистента в стиле «Матрицы».', 'Зелёный код, тёмные очки, эффекты и звук; сдано в трёх форматах.'),
     ('volcano', 'volcano.webp', False, 'Volcanic Valley', '16:9 · 0:30', '3D, свет, камера, рендер', 'Кинематографичное окружение без рендер-фермы.', 'Рельеф, лава, частицы и небо созданы процедурно в Blender.'),
     ('chaos', 'chaos.webp', False, 'Chaos Reality · 2.5D', '16:9 · 0:09', 'Арт-дирекшн, анимация, звук', 'Недорогой и мгновенно читаемый стиль для канала.', 'AI-персонажи разложены по слоям и анимированы в 2.5D, эффекты на битах.'),
-    ('mebel', 'mebel.webp', True, 'Мебель и квартира', '9:16 · 0:52', 'Монтаж, композитинг, переходы', 'Показать дизайн-проект до реализации в формате для соцсетей.', 'Переходы взмахом руки превращают стройку в готовые комнаты.'),
+    ('ostrov', 'ostrov.webp', False, 'Остров, которого нет', '16:9 · 2:40', 'Раскадровка, анимация, звук, монтаж', 'Подогнать готовую озвучку под картинку, не ускоряя голос.', 'Каждая фраза начинается на своём кадре; музыка и эффекты лежат под голосом.'),
     ('telefon', 'telefon.webp', False, 'Телефон · кинетическое промо', '1:1 · 0:09', 'Моушн-дизайн, типографика', 'Квадратный ролик, который останавливает ленту.', 'Один объект, несколько слов, ритм от склеек.')],
   reviews=[('Видеомонтаж анимации + логотип', 'Супер якісне виконання проекту, максимальна лояльність та професіоналізм зі сторони виконавця. Однозначно звернемось ще, неодноразово. Задоволені на 100%.'),
            ('Видеокреатив', 'Роботою задоволений на всі 1000%. Завжди був на зв’язку, відповідав практично миттєво. Була одна правка, і та несуттєва — виконав протягом години.'),
@@ -94,7 +94,7 @@ T = {
   p_big='One person for the whole chain: from idea and storyboard to edit, motion, sound and delivery.',
   p_txt='Over 7+ years I have worked at four companies. Three years were in AI video: face replacement (deepfake), lip-sync and AI voice-over. The rest was motion design and editing for news and social channels, advertising, YouTube and interior studios. I work to brand guides and templates, deliver on time and keep projects and source files tidy.',
   dir_h='Fields', dirs=[('News & social', 'u4.webp'), ('Ads & promos', 'telefon.webp'), ('YouTube & thumbnails', '@th_missing39.webp'), ('Interiors & Reels', 'remont1.webp'), ('3D environments', 'volcano.webp'), ('Animation & AI', 'chaos.webp')],
-  g_h='Design & thumbnails', g_s='YouTube thumbnails: one big idea, readable text and emotion that makes people click.',
+  g_h='GONAR FORCE thumbnails', g_s='Thumbnails for my YouTube channel GONAR FORCE: one big idea, readable text, emotion.',
   x_h='Experience', x=[
     ('Motion design & editing', '4+ years', ['Vertical news videos on channel templates: titles, data graphics, voice-over and sound, fast turnaround.', 'Ad creatives, kinetic typography and promos, motion branding and logos.', 'Full YouTube channel production, thumbnails, animated stories, Reels for interior studios.']),
     ('AI video', '3 years', ['Face replacement (deepfake) and lip-sync: source prep, generation, shot clean-up.', 'AI voice-over and voice synthesis, mixed with music and effects.', 'Blending AI shots into the edit so the result feels seamless.'])],
@@ -114,12 +114,12 @@ T = {
   q_site='Portfolio website', q_tg='Telegram',
   works=[
     ('sylar', 'Portfolio_Sylar_TG.webp', True, 'Portfolio Sylar TG', '9:16 · 0:20', 'Idea, motion, 3D, titles, sound', 'A motion business card that grabs attention: 20 seconds to a track.', '3D space, hologram titles and transitions locked to the beat.'),
-    ('intro', 'GONAR_intro.webp', False, 'GONAR intro', '16:9 · 0:20 · loop', 'Idea, 3D, motion', 'A looping website intro that shows all my work at once.', 'The camera orbits a film strip playing my videos; hologram glitch and DOS-style typing.'),
-    ('soobshenie', 'soobshenie.webp', False, 'Message From Me', '16:9 · 2:39', 'Story, animation, voice, sound, edit', 'Hold attention for almost three minutes with flat illustration.', 'Paced line by line, subtitles timed to audio, sound carries the tension.'),
-    ('marshrut0', 'marshrut0.webp', False, 'Route 0', '16:9 · 2:56', 'Animation, typography, sound, edit', 'A quiet, eerie story readable at a glance.', 'Strong single-image scenes, legible captions, restrained sound.'),
+    ('mebel', 'mebel.webp', True, 'Furniture & Apartment', '9:16 · 0:52', 'Edit, compositing, transitions', 'Show the client the future interior right on the building site, made for social media.', 'A hand gesture turns bare walls into a finished, furnished room.'),
+    ('gf_intro', 'A:gf_intro.jpg', False, 'GONAR FORCE · Intro', '16:9 · 0:41', 'Motion, 3D titles, edit, sound', 'An intro for my YouTube channel GONAR FORCE.', 'Colour-lens footage, 3D titles and fire flashes in one rhythm.'),
+    ('matrica', 'A:matrica.jpg', False, 'Matrix · AI Promo', '16:9 · 1:1 · 9:16', 'Edit, effects, sound', 'A Matrix-style promo for an AI assistant.', 'Green code, dark glasses, effects and sound; delivered in three formats.'),
     ('volcano', 'volcano.webp', False, 'Volcanic Valley', '16:9 · 0:30', '3D, lighting, camera, render', 'A cinematic environment without a render farm.', 'Terrain, lava, particles and sky built procedurally in Blender.'),
     ('chaos', 'chaos.webp', False, 'Chaos Reality · 2.5D', '16:9 · 0:09', 'Art direction, animation, sound', 'A cheap, instantly readable look for a channel.', 'AI characters split into layers and animated in 2.5D, effects on the beats.'),
-    ('mebel', 'mebel.webp', True, 'Furniture & Apartment', '9:16 · 0:52', 'Edit, compositing, transitions', 'Show a design project before it is built, made for social media.', 'Hand-swipe transitions turn the building site into finished rooms.'),
+    ('ostrov', 'ostrov.webp', False, 'The Island That Isn’t', '16:9 · 2:40', 'Storyboard, animation, sound, edit', 'Fit a ready-made narration to the picture without speeding the voice up.', 'Every phrase starts on its own shot; music and effects sit under the voice.'),
     ('telefon', 'telefon.webp', False, 'Phone · Kinetic Promo', '1:1 · 0:09', 'Motion design, typography', 'A square promo that stops the scroll.', 'One object, a few words, rhythm from the cuts.')],
   reviews=[('Animation edit + logo', 'Super high-quality work, maximum loyalty and professionalism. We will definitely come back, more than once. 100% satisfied.'),
            ('Video creative', '1000% happy. Always in touch and replied almost instantly. There was one minor revision, done within an hour.'),
@@ -128,7 +128,8 @@ T = {
 ),
 }
 
-THUMBS = ['th_missing39', 'thumb_alive', 'th_9effects', 'th_archaeology', 'th_firefly', 'th_skater']
+THUMBS = ['gf_greenlantern', 'gf_vampire', 'gf_witcher', 'gf_darthmaul', 'gf_harley', 'gf_nos4a2']
+ARCH = ('gf_intro', 'matrica')
 NEWS = ['u4', 'u3', 'tz3', 'n1', 'u2', 'n12']
 
 CSS = r"""
@@ -266,9 +267,11 @@ def page(cls, t, n, label, body):
 
 def work(t, w):
     wid, img, vert, title, fmt, role, task, sol = w
-    href = SITE + (f'#/work/{wid}' if wid not in ('sylar', 'intro') else '')
-    src = im(img, 640)
-    pic = (f'<img class="bg" src="{im(img, 200)}" alt=""><img class="fg" src="{src}" alt="">' if vert else f'<img src="{src}" alt="">')
+    href = SITE + ('' if wid in ('sylar', 'intro') else f'#/video/{wid}' if wid in ARCH else f'#/work/{wid}')
+    d = '../media/archive/poster/' if img.startswith('A:') else '../media/poster/'
+    img = img[2:] if img.startswith('A:') else img
+    src = im(img, 640, d)
+    pic = (f'<img class="bg" src="{im(img, 200, d)}" alt=""><img class="fg" src="{src}" alt="">' if vert else f'<img src="{src}" alt="">')
     return f'''<div class="w"><a class="im{' v' if vert else ''}" href="{href}">{pic}<i class="play"></i></a>
 <div class="bd"><div class="t"><h3><a href="{href}">{e(title)} ↗</a></h3><span>{e(fmt)}</span></div>
 <p><b>{e(t['role_l'])}</b>{e(role)}</p><p><b>{e(t['task_l'])}</b>{e(task)}</p><p><b>{e(t['sol_l'])}</b>{e(sol)}</p></div></div>'''
@@ -303,7 +306,7 @@ def build(L):
 <h3 style="margin-top:5mm">{e(t['dir_h'])}</h3><div class="dirs">{dirs}</div>''')
     sk = ''.join(f'<div><h3>{e(h)}</h3><ul>{"".join(f"<li>{e(i)}</li>" for i in items)}</ul></div>' for h, items in t['s_groups'])
     st = ''.join(f'<div><b>{e(a)}</b><span>{e(b)}</span></div>' for a, b in t['st'])
-    gal = ''.join(f'<a href="{SITE}#gallery"><img src="{im(n + ".webp", 600, "../media/img/")}" alt=""></a>' for n in THUMBS)
+    gal = ''.join(f'<a href="{SITE}#gallery"><img src="{im(n + ".webp", 600, "../media/gallery/")}" alt=""></a>' for n in THUMBS)
     skills = page('', t, 3, t['s_h'], f'''<div class="eb">{e(t['s_eb'])}</div><h2>{e(t['s_h'])}</h2>
 <div class="sk">{sk}</div><div class="film"></div><h3>{e(t['st_h'])}</h3><div class="str">{st}</div>
 <div class="film"></div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8mm"><h3>{e(t['g_h'])}</h3><p class="mut" style="font-size:8.5pt;text-align:right">{e(t['g_s'])}</p></div>
