@@ -177,18 +177,21 @@ window.SITE = {
     { n:{en:'AE / PR', ru:'AE / PR'}, t:{en:'source files are yours', ru:'исходники отдаю'} }
   ],
   REVIEWS: [
-    { tag:{en:'Animation edit + logo', ru:'Видеомонтаж анимации + логотип'},
-      q:{en:'Super high-quality work, maximum loyalty and professionalism. We will definitely come back, more than once. 100% satisfied.', ru:'Супер якісне виконання проекту, максимальна лояльність та професіоналізм зі сторони виконавця. Однозначно звернемось ще, неодноразово. Задоволені на 100%.'} },
-    { tag:{en:'Video creative', ru:'Видеокреатив'},
-      q:{en:'1000% happy. Always in touch and replied almost instantly. Honestly, the result exceeded my expectations. There was one minor revision, done within an hour.', ru:'Роботою задоволений на всі 1000%. Завжди був на зв’язку, відповідав практично миттєво. Робота зроблена так, що чесно кажучи і не очікував. Була одна правка, і та несуттєва — виконав протягом години.'} },
-    { tag:{en:'Object tracking in After Effects', ru:'Трекинг объекта в After Effects'},
-      q:{en:'An excellent pro: everything done fast and well. You can rely on him for any task.', ru:'Відмінний майстер, все зробив дуже швидко і якісно, можете на нього покластися при будь-яких завданнях.'} },
-    { tag:{en:'Personal project', ru:'Персональный проект'},
-      q:{en:'Did what others couldn’t. Really great.', ru:'Сделал то, что другие не могли — очень классно.'} },
-    { tag:{en:'Image retouching', ru:'Ретушь и обработка изображений'},
-      q:{en:'My brief wasn’t very clear, but he quickly clarified everything and delivered, taking all my wishes into account. A hard, very detailed job. 10/10.', ru:'Хоча моє ТЗ було сформовано не надто чітко, він швидко уточнив усю необхідну інформацію та якісно виконав завдання, враховуючи всі мої побажання. Робота була дуже важка і потребувала опрацювання значної кількості деталей. 10/10.'} },
-    { tag:{en:'Photo for a painting', ru:'Обработка фото для картины'},
-      q:{en:'Creative and easy to work with. Did exactly what we asked, plus options. Recommended.', ru:'Хороший исполнитель, креативный, в общении лёгкий. Сделал, как заказывали + варианты. Рекомендую.'} }
+    { tag:{en:"Animation edit + logo", ru:"Видеомонтаж анимации + логотип"}, q:{en:"Super high-quality work, maximum loyalty and professionalism. We will definitely come back, more than once. 100% satisfied.", ru:"Супер якісне виконання проекту, максимальна лояльність та професіоналізм зі сторони виконавця. Однозначно звернемось ще, неодноразово. Задоволені на 100%."} },
+    { tag:{en:"Video creative", ru:"Видеокреатив"}, q:{en:"1000% happy. Always in touch and replied almost instantly. Honestly, the video creative exceeded my expectations. There was one minor revision, done within an hour. Recommended. I’ll be back!", ru:"Роботою задоволений на всі 1000%. Завжди був на зв’язку, відповідав практично миттєво. Робота по створенню відео креативу зроблена так, що чесно кажучи і не очікував. Була одна правка і та несуттєва, яку виконав протягом години. Рекомендую. Буду звертатись!"} },
+    { tag:{en:"AI video · deepfake", ru:"AI-видео · дипфейк"}, q:{en:"A true professional and a very responsible person. I’ve already saved his contact for ongoing work. Recommended!!!", ru:"Це професіонал своєї справи, дуже відповідальна людина. Я собі вже зберіг контакт на постійну співпрацю. Рекомендую!!!"} },
+    { tag:{en:"AI video · deepfake and voice", ru:"AI-видео · дипфейк и голос"}, q:{en:"Simply top. Done fast and with great quality. The video looks really cool and the voice is a perfect match!", ru:"Просто топ. Виконав завдання швидко та дуже якісно. Відео виглядає дуже круто та голос підібраний ідеально!"} },
+    { tag:{en:"Image retouching", ru:"Ретушь и обработка изображений"}, q:{en:"Very happy with the designer. My brief wasn’t very clear, but he quickly clarified everything and delivered, taking all my wishes into account. A hard job with lots of detail. 10/10.", ru:"Я дуже задоволений роботою дизайнера. Хоча моє ТЗ було сформовано не надто чітко, він швидко уточнив усю необхідну інформацію та якісно виконав завдання, враховуючи всі мої побажання. Робота була дуже важка і потребувала опрацювання значної кількості деталей. 10/10."} },
+    { tag:{en:"Object tracking in After Effects", ru:"Трекинг объекта в After Effects"}, q:{en:"An excellent pro: everything done fast and well. You can rely on him for any task.", ru:"Відмінний майстер, все зробив дуже швидко і якісно, можете на нього покластися при будь-яких завданнях."} },
+    { tag:{en:"Personal project", ru:"Персональный проект"}, q:{en:"Did what others couldn’t. Really great.", ru:"Сделал то, что другие не могли — очень классно."} },
+    { tag:{en:"Video clean-up", ru:"Ретушь видео"}, q:{en:"Thank you very much for the work! Highly recommended!", ru:"Большое спасибо за работу! Высоко рекомендуем!"} },
+    { tag:{en:"Photoshop design", ru:"Photoshop-дизайн"}, q:{en:"Did a great job. Professional and attentive to detail!", ru:"Чудово виконав роботу. Професійно та з увагою до деталей!"} },
+    { tag:{en:"Photo editing", ru:"Обработка фотографии"}, q:{en:"Very happy working with him! Replies very fast and sees the job through to the end. Definitely recommended!", ru:"Дуже задоволена роботою з цим виконавцем! Відповідає дуже швидко, доробляє роботу до кінця. Однозначно рекомендую!"} },
+    { tag:{en:"Small design fixes", ru:"Мелкие правки в дизайне"}, q:{en:"Loved everything: good communication, fast and attentive to detail. Recommended!", ru:"Все сподобалось, гарна комунікація, все було зроблено швидко і з увагою до деталей. Рекомендую!"} },
+    { tag:{en:"Photo for a painting", ru:"Обработка фото для картины"}, q:{en:"Creative and easy to work with. Did exactly what we asked, plus options. Recommended.", ru:"Хороший исполнитель, креативный, в общении лёгкий. Сделал, как заказывали + варианты. Рекомендую."} },
+    { tag:{en:"AI · face replacement on a photo", ru:"AI · замена лица на фото"}, q:{en:"All great, the work is done to a high standard.", ru:"Все отлично, работа выполнена качественно."} },
+    { tag:{en:"After Effects effects tutoring", ru:"Обучение эффектам в After Effects"}, q:{en:"All great — fast and on time.", ru:"Все отлично — быстро и вовремя."} },
+    { tag:{en:"Talking-head video", ru:"Видео с говорящей головой"}, q:{en:"All good, thanks for the work.", ru:"Всё гуд, благодарю за работу."} }
   ],
   FAQ: [
     { q:{en:'How fast will I see a result?', ru:'Как быстро будет результат?'}, a:{en:'The first draft arrives in 2–3 days (Reels in 1–2). You review it, send notes, I polish.', ru:'Первая версия — через 2–3 дня (Reels — 1–2). Вы смотрите, присылаете замечания, я дорабатываю.'} },
