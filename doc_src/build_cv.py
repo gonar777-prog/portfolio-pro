@@ -130,7 +130,7 @@ T = {
 }
 
 THUMBS = ['gf_greenlantern', 'gf_vampire', 'gf_witcher', 'gf_darthmaul', 'gf_harley', 'gf_nos4a2']
-ARCH = ('gf_intro', 'matrica')
+ARCH = ()
 NEWS = ['u4', 'u3', 'tz3', 'n1', 'u2', 'n12']
 
 CSS = r"""
