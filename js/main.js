@@ -53,6 +53,16 @@ function renderLists() {
   $('#apprList').innerHTML = S.APPR.map(s => `<li class="step"><h3>${L(s.t)}</h3><p>${L(s.d)}</p></li>`).join('');
   $$('[data-pdf]').forEach(a => { a.href = `assets/docs/GONAR_Portfolio_${lang.toUpperCase()}.pdf`; a.setAttribute('download', `GONAR_Portfolio_${lang.toUpperCase()}.pdf`); });
   $('#toolGroups').innerHTML = S.TOOLGROUPS.map(g => `<div class="tg"><h3>${L(g.g)}</h3><ul>${g.i.map(x => `<li>${typeof x === 'string' ? x : L(x)}</li>`).join('')}</ul></div>`).join('');
+  $('#priceGrid').innerHTML = S.PRICING.map(p => `
+    <li class="price${p.hot ? ' is-hot' : ''}"><span class="price__ghost" aria-hidden="true">${p.ghost}</span>
+      <div class="price__top"><span class="badge">${L(p.time)}</span>${p.hot ? `<span class="badge badge--hot">${T('hot')}</span>` : ''}</div>
+      <h3>${L(p.t)}</h3><p class="price__d">${L(p.d)}</p>
+      <p class="price__p">${L(p.price)}</p>${L(p.alt) ? `<p class="price__alt">${L(p.alt)}</p>` : ''}
+      <ul>${L(p.i).map(x => `<li>${x}</li>`).join('')}</ul>
+      <a class="btn ${p.hot ? 'btn--solid' : ''}" href="${S.links.tg}" target="_blank" rel="noopener">${T('order')}</a></li>`).join('');
+  $('#termsList').innerHTML = S.TERMS.map(x => `<li><b>${L(x.n)}</b><span>${L(x.t)}</span></li>`).join('');
+  $('#revGrid').innerHTML = S.REVIEWS.map(r => `<li class="rev"><span class="stars" aria-label="5 of 5">★★★★★</span><blockquote>«${L(r.q)}»</blockquote><p class="rev__tag">${L(r.tag)} · Freelancehunt</p></li>`).join('');
+  $('#faqList').innerHTML = S.FAQ.map((f, i) => `<details class="qa"${i === 0 ? ' open' : ''}><summary>${L(f.q)}</summary><p>${L(f.a)}</p></details>`).join('');
   renderArchive(); renderGallery();
   const m = S.MARQUEE[lang].map(x => `<span>${x}</span>`).join('');
   $('#marquee').innerHTML = m + m + m + m;
@@ -265,10 +275,9 @@ function setupScroll() {
   if (reduced) { $$('[data-split]').forEach(e => e.classList.add('in')); $$('[data-count]').forEach(e => e.textContent = e.dataset.count); return; }
   gsap.to('.hero__media', { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
   gsap.to('.hero__main,.hero__top', { opacity: 0, y: -40, ease: 'none', scrollTrigger: { trigger: '#hero', start: '35% top', end: 'bottom 20%', scrub: true } });
-  gsap.to('.hero__word', { yPercent: 18, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
-  $$('.thumb img').forEach((img, i) => gsap.fromTo(img, { yPercent: -5 }, { yPercent: 5, ease: 'none', scrollTrigger: { trigger: img.parentElement, scrub: true } }));
+    $$('.thumb img').forEach((img, i) => gsap.fromTo(img, { yPercent: -5 }, { yPercent: 5, ease: 'none', scrollTrigger: { trigger: img.parentElement, scrub: true } }));
   $$('.thumb').forEach(t => { t.style.overflow = 'hidden'; const im = $('img', t); im.style.scale = 1.12; });
-  $$('.step,.serv,.chan,.short,.thumb').forEach(el => gsap.from(el, { opacity: 0, y: 36, duration: .9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 92%', once: true } }));
+  $$('.step,.serv,.chan,.short,.thumb,.price,.rev,.qa,.fact').forEach(el => gsap.from(el, { opacity: 0, y: 36, duration: .9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 92%', once: true } }));
   $$('[data-count]').forEach(el => { const n = +el.dataset.count, o = { v: 0 };
     ScrollTrigger.create({ trigger: el, start: 'top 92%', once: true, onEnter: () => gsap.to(o, { v: n, duration: 1.6, ease: 'power2.out', onUpdate: () => el.textContent = Math.round(o.v) + (el.dataset.suf || '') }) }); });
   gsap.matchMedia().add('(min-width: 900px)', () => {
@@ -288,7 +297,7 @@ function intro() {
   if (store.sget('seen') || reduced) { el.remove(); reveal(); return; }
   const o = { v: 0 };
   if (lenis) lenis.stop();
-  gsap.to(o, { v: 1, duration: 1.7, ease: 'power2.inOut', onUpdate: () => { b.style.transform = `scaleX(${o.v})`; t.textContent = fmtTc(o.v * 4.2); }, onComplete: finish });
+  gsap.to(o, { v: 1, duration: 1.0, ease: 'power2.inOut', onUpdate: () => { b.style.transform = `scaleX(${o.v})`; t.textContent = fmtTc(o.v * 4.2); }, onComplete: finish });
   gsap.from('.intro__name', { yPercent: 100, duration: 1, ease: 'power4.out', delay: .1 });
   $('#introSkip').addEventListener('click', finish);
   addEventListener('keydown', e => { if (!done && (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ')) finish(); });
@@ -305,7 +314,7 @@ $('#copyMail').addEventListener('click', async e => {
 document.addEventListener('visibilitychange', () => { if (document.hidden) { hv.pause(); } else if (reelEl.hidden) hv.play().catch(() => {}); });
 
 /* boot */
-$('#stVideo').dataset.count = S.CASES.length + S.NEWS.length + window.ARCH.length; $('#stDesign').dataset.count = window.GALLERY.length;
+$('#stVideo').dataset.count = $('#stVideo2').dataset.count = S.CASES.length + S.NEWS.length + window.ARCH.length; $('#stDesign').dataset.count = window.GALLERY.length;
 applyLang(); setupScroll(); intro();
 const m = location.hash.match(/^#\/work\/(.+)$/); if (m && byId(m[1])) setTimeout(() => openCase(m[1], null, true), 300);
 if (reduced) hv.removeAttribute('autoplay');

@@ -16,12 +16,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico?v=3"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
-<link rel="preload" href="media/poster/reel.webp" as="image">
+<link rel="preload" href="media/poster/GONAR_intro.webp" as="image">
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="is-loading">
 <a class="skip-link" href="#work">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="gmg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cf3e6"/><stop offset=".55" stop-color="#3fcfc2"/><stop offset="1" stop-color="#1f9e93"/></linearGradient>
+  <linearGradient id="amb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#f29a2e"/></linearGradient>
+  <filter id="gl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <symbol id="gmark" viewBox="0 0 64 64"><g filter="url(#gl)"><path d="M46.94 19.47A19.5 19.5 0 1 0 51.50 32.00H38.5" fill="none" stroke="url(#gmg)" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g fill="#12151a"><rect x="35.93" y="12.20" width="4.2" height="2.5" rx="1.25" transform="rotate(18.0 38.03 13.45)"/><rect x="26.51" y="11.55" width="4.2" height="2.5" rx="1.25" transform="rotate(-10.0 28.61 12.80)"/><rect x="17.89" y="15.38" width="4.2" height="2.5" rx="1.25" transform="rotate(-38.0 19.99 16.63)"/><rect x="12.09" y="22.82" width="4.2" height="2.5" rx="1.25" transform="rotate(-66.0 14.19 24.07)"/><rect x="10.45" y="32.11" width="4.2" height="2.5" rx="1.25" transform="rotate(-94.0 12.55 33.36)"/><rect x="13.36" y="41.08" width="4.2" height="2.5" rx="1.25" transform="rotate(-122.0 15.46 42.33)"/><rect x="20.15" y="47.64" width="4.2" height="2.5" rx="1.25" transform="rotate(-150.0 22.25 48.89)"/><rect x="29.22" y="50.24" width="4.2" height="2.5" rx="1.25" transform="rotate(-178.0 31.32 51.49)"/><rect x="38.45" y="48.28" width="4.2" height="2.5" rx="1.25" transform="rotate(-206.0 40.55 49.53)"/><rect x="45.68" y="42.21" width="4.2" height="2.5" rx="1.25" transform="rotate(-234.0 47.78 43.46)"/></g>
+<path d="M21.4 27v10l8.2-5z" fill="url(#amb)" stroke="url(#amb)" stroke-width="2.2" stroke-linejoin="round"/></symbol></defs></svg>
 
 <div class="intro" id="intro" aria-hidden="true">
   <div class="intro__tc"><span id="introTc">00:00:00:00</span></div>
@@ -31,16 +38,15 @@
 </div>
 
 <header class="nav" id="nav">
-  <a class="nav__logo" href="#top" aria-label="GONAR, top of page">GONAR</a>
+  <a class="nav__logo" href="#top" aria-label="GONAR, top of page"><svg class="nav__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#gmark"/></svg><span>GONAR</span></a>
   <nav class="nav__links" aria-label="Primary">
     <a href="#work" data-i18n="nav_work">Work</a>
-    <a href="#shorts" data-i18n="nav_shorts">Shorts</a>
+    <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+    <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
     <a href="#archive" data-i18n="nav_all">All work</a>
-    <a href="#gallery" data-i18n="nav_design">Design</a>
-    <a href="#services" data-i18n="nav_services">Services</a>
     <a href="#about" data-i18n="nav_about">About</a>
-    <a href="#contact" data-i18n="nav_contact">Contact</a>
   </nav>
+  <a class="nav__cta" href="https://t.me/aid99999" target="_blank" rel="noopener" data-i18n="cta_order">Order a video</a>
   <div class="lang" role="group" aria-label="Language">
     <button type="button" data-lang="en" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="ru" aria-pressed="false">RU</button>
   </div>
@@ -50,19 +56,20 @@
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero__media">
-    <video id="heroVideo" src="media/video/reel_bg.mp4" poster="media/poster/reel.webp" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <video id="heroVideo" src="media/video/GONAR_intro.mp4" poster="media/poster/GONAR_intro.webp" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
     <div class="hero__shade"></div>
   </div>
   <div class="hero__top">
-    <p class="hero__role" data-i18n="hero_role">Video editor &amp; motion designer</p>
+    <p class="eyebrow" data-i18n="eb_hero">Video editor &amp; motion designer · 7+ years</p>
     <p class="hero__tc" aria-hidden="true"><span id="tc">00:00:00:00</span><span class="hero__tcl" data-i18n="reel_label">Showreel</span></p>
   </div>
   <div class="hero__main">
-    <h1 class="hero__line serif" data-split data-i18n="hero_line">Cinematic storytelling, built with AI-assisted pipelines.</h1>
+    <h1 class="hero__line serif" data-split data-i18n="hero_line">Motion &amp; editing that sells.</h1>
+    <p class="hero__sub" data-i18n="hero_sub">Editing, motion graphics and 3D promos for brands, creators and news channels. First draft in 2–3 days.</p>
     <div class="hero__cta">
       <a class="btn btn--solid mag" href="https://t.me/aid99999" target="_blank" rel="noopener" data-cursor="Telegram"><span data-i18n="cta_tg">Message on Telegram</span></a>
-      <button class="btn mag" id="reelBtn" type="button" data-cursor="Play"><i class="play" aria-hidden="true"></i><span data-i18n="cta_reel">Play reel with sound</span></button>
-      <a class="btn btn--ghost mag" data-pdf href="assets/docs/GONAR_Portfolio_EN.pdf" download target="_blank" rel="noopener"><span data-i18n="cta_pdf">Download portfolio (PDF)</span></a>
+      <button class="btn btn--ghost mag" id="reelBtn" type="button" data-cursor="Play"><i class="play" aria-hidden="true"></i><span data-i18n="cta_reel">Play reel with sound</span></button>
+      <a class="btn mag" href="#pricing" data-cursor="Prices"><span data-i18n="cta_prices">See prices</span></a>
     </div>
   </div>
   <figure class="hero__card" id="vkCard">
@@ -70,14 +77,23 @@
     <button class="hero__card-snd" id="vkSnd" type="button" aria-pressed="false" data-cursor="Sound"><i class="play" aria-hidden="true"></i><span id="vkSndT" data-i18n="vk_on">Watch with sound</span></button>
     <figcaption><span class="mono">9:16 · 0:20</span><b>Портфолио Sylar TG</b><span class="hero__card-cap" data-i18n="vk_cap">Motion business card: 3D, holograms, sound on the beat</span></figcaption>
   </figure>
-  <div class="hero__word" aria-hidden="true">GONAR</div>
+  </section>
+
+<div class="filmstrip" aria-hidden="true"></div>
+<section class="strip" aria-label="Key facts">
+  <div class="wrap strip__in">
+    <div class="fact"><b>7+</b><span data-i18n="st_years">years in design</span></div>
+    <a class="fact" href="#reviews"><b>5.0<i>★</i></b><span data-i18n="st_rating">Freelancehunt rating · 15+ reviews</span></a>
+    <div class="fact"><b>2–3</b><span data-i18n="st_days">days to the first draft</span></div>
+    <div class="fact"><b id="stVideo2">0</b><span data-i18n="st_videos">video projects</span></div>
+  </div>
 </section>
 
 <!-- WORK -->
 <section class="work" id="work" aria-labelledby="workH">
   <div class="work__pin" id="workPin">
     <div class="work__head wrap">
-      <h2 id="workH" class="h2 serif" data-split data-i18n="work_h">Selected work</h2>
+      <div><p class="eyebrow" data-i18n="eb_work">01 · Portfolio</p><h2 id="workH" class="h2 serif" data-split data-i18n="work_h">Selected work</h2></div>
       <p class="lede" data-i18n="work_s">Eleven projects across animation, motion and 3D. Hover to preview, click to open.</p>
       <p class="work__hint mono" aria-hidden="true"><span data-i18n="drag">Scroll</span> <i></i></p>
     </div>
@@ -85,11 +101,35 @@
   </div>
 </section>
 
+<!-- PRICING -->
+<section class="pricing section" id="pricing" aria-labelledby="priceH">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow" data-i18n="eb_pricing">02 · Pricing</p><h2 id="priceH" class="h2 serif" data-split data-i18n="pricing_h">Packages &amp; prices</h2></div>
+      <p class="lede" data-i18n="pricing_s"></p>
+    </div>
+    <ul class="prices" id="priceGrid"></ul>
+    <ul class="terms" id="termsList"></ul>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews section" id="reviews" aria-labelledby="revH">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow" data-i18n="eb_reviews">03 · Reviews</p><h2 id="revH" class="h2 serif" data-split data-i18n="reviews_h">What clients say</h2></div>
+      <div class="rev__score"><b>5.0</b><span class="stars" aria-label="5 of 5">★★★★★</span><p class="lede" data-i18n="reviews_s"></p>
+        <a class="link" href="https://freelancehunt.com/freelancer/gonar.html#reviews" target="_blank" rel="noopener" data-i18n="reviews_all">All reviews on Freelancehunt →</a></div>
+    </div>
+    <ul class="revs" id="revGrid"></ul>
+  </div>
+</section>
+
 <!-- SHORTS -->
 <section class="shorts section" id="shorts" aria-labelledby="shortsH">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="shortsH" class="h2 serif" data-split data-i18n="shorts_h">News &amp; social shorts</h2>
+      <div><p class="eyebrow" data-i18n="eb_shorts">Social</p><h2 id="shortsH" class="h2 serif" data-split data-i18n="shorts_h">News &amp; social shorts</h2></div>
       <p class="lede" data-i18n="shorts_s">Vertical 9:16 edits.</p>
     </div>
     <ul class="shorts__grid" id="shortsGrid"></ul>
@@ -100,7 +140,7 @@
 <section class="archive section" id="archive" aria-labelledby="archH">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="archH" class="h2 serif" data-split data-i18n="archive_h">All work</h2>
+      <div><p class="eyebrow" data-i18n="eb_all">Archive</p><h2 id="archH" class="h2 serif" data-split data-i18n="archive_h">All work</h2></div>
       <p class="lede" data-i18n="archive_s"></p>
     </div>
     <div class="filters" id="archFilters" role="group" aria-label="Filter"></div>
@@ -112,7 +152,7 @@
 <section class="gallery section" id="gallery" aria-labelledby="galH">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="galH" class="h2 serif" data-split data-i18n="gallery_h">Design &amp; thumbnails</h2>
+      <div><p class="eyebrow" data-i18n="eb_design">Design</p><h2 id="galH" class="h2 serif" data-split data-i18n="gallery_h">Design &amp; thumbnails</h2></div>
       <p class="lede" data-i18n="gallery_s"></p>
     </div>
     <div class="filters" id="galFilters" role="group" aria-label="Filter"></div>
@@ -132,10 +172,19 @@
 <section class="process section" id="process" aria-labelledby="procH">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="procH" class="h2 serif" data-split data-i18n="process_h">How we work</h2>
+      <div><p class="eyebrow" data-i18n="eb_proc">Process</p><h2 id="procH" class="h2 serif" data-split data-i18n="process_h">How we work</h2></div>
       <p class="lede" data-i18n="process_s">Five steps, one point of contact.</p>
     </div>
     <ol class="process__list" id="procList"></ol>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq section" id="faq" aria-labelledby="faqH">
+  <div class="wrap grid">
+    <div class="faq__h"><p class="eyebrow" data-i18n="eb_faq">04 · Terms</p><h2 id="faqH" class="h2 serif" data-split data-i18n="faq_h">How we work together</h2>
+      <a class="btn btn--solid mag" href="https://t.me/aid99999" target="_blank" rel="noopener"><span data-i18n="cta_tg">Message on Telegram</span></a></div>
+    <div class="faq__list" id="faqList"></div>
   </div>
 </section>
 
@@ -181,13 +230,14 @@
       <li><span class="mono">PDF</span><a data-pdf href="assets/docs/GONAR_Portfolio_EN.pdf" download target="_blank" rel="noopener" data-i18n="cta_pdf">Download portfolio (PDF)</a></li>
       <li><span class="mono">Email</span><a href="mailto:gonar777@gmail.com">gonar777@gmail.com</a><button type="button" class="copy" id="copyMail" data-i18n="email_copy">Copy email</button></li>
       <li><span class="mono">Freelancehunt</span><a href="https://freelancehunt.com/freelancer/gonar.html" target="_blank" rel="noopener" data-i18n="fl">Freelancehunt profile</a></li>
+      <li><span class="mono">Portfolio</span><a href="https://gonar777-prog.github.io/portfolio/" target="_blank" rel="noopener" data-i18n="other_site">Creative space portfolio →</a></li>
     </ul>
   </div>
 </section>
 </main>
 
 <footer class="foot">
-  <div class="wrap foot__in"><span data-i18n="footer">© 2026 GONAR.</span><a href="#top" data-i18n="top">Back to top</a></div>
+  <div class="wrap foot__in"><span data-i18n="footer">© 2026 GONAR.</span><a href="https://gonar777-prog.github.io/portfolio/" target="_blank" rel="noopener" data-i18n="other_site">Creative space portfolio →</a><a href="#top" data-i18n="top">Back to top</a></div>
 </footer>
 
 <!-- CASE OVERLAY -->
